@@ -1,0 +1,135 @@
+html {
+    width: 100%;
+    height: 100%;
+    padding: auto;
+    background-color: #85a57a;
+    font-family: Geneva, Tahoma, sans-serif;
+}
+
+#cover {
+    background: url(https://cdn.pixabay.com/photo/2015/08/16/17/35/sword-891356_1280.jpg);
+    width: 200px;
+    height: 150px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.acceuil {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    color: #445843;
+
+}
+
+a:hover {
+    font-style: oblique;
+    font-family: fantasy;
+    text-decoration: wavy;
+}
+
+.Header {
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    width: 85%;
+    max-width: 1800px;
+    height: 150px;
+    margin: 0px 0px 5px 0px;
+    border-radius: 20px;
+    background-color: #445843;
+    float: right;
+}
+.avis {
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 97.3%;
+    height: 150px;
+    margin:10px 0 15px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #445843;
+    color: yellow;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh; /*La hauteur du body est de 100% de la hauteur de la fenêtre (viewport).*/
+    margin: 0 0 15px 0; 
+    background-color: #445843;
+    border-radius: 20px;
+}
+label {
+    display: flex;
+    text-align: center;
+    font-style: italic;
+    color: yellow;
+    font-weight: bold;
+}
+#pseudo {
+    display: flex;
+    border-radius: 20px;
+    width: 150px;
+    height: 20px;
+    align-items: center;
+}
+
+#ameliorer {
+
+    display: flex;
+    border-radius: 20px;
+}
+ #bouton {
+    display: flex;
+    align-items: right;
+    border-radius: 20px;
+    height: 2em;
+    background-color: #85a57a;
+ }
+/*Bas de la page */
+.Mentions {
+    font-size: x-large;
+    gap: 40px;
+    width: 100%;
+    max-width: 967px;
+    height: 180px;
+    border-radius: 20px;
+    background-color: #445843;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a {
+    color: #F0F0FF;
+}
+
+.imgbasg,
+.imgbasd {
+    width: 100%;
+    max-width: 254px;
+    height: 180px;
+    margin: 0 15px 15px 0;
+    padding-bottom: 10px;
+    border-radius: 20px;
+}
+
+.imgbasd {
+    float: right;
+}
+
+.imgbasg {
+    float: left;
+}

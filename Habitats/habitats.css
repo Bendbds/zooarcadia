@@ -1,0 +1,146 @@
+html {
+    width: 100%;
+    height: 100%;
+    padding: auto;
+    background-color: #85a57a;
+    font-family: Geneva, Tahoma, sans-serif;
+}
+
+#cover {
+    background: url(https://cdn.pixabay.com/photo/2015/08/16/17/35/sword-891356_1280.jpg);
+    width: 200px;
+    height: 150px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.acceuil {
+    font-family: Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    color: #445843;
+
+}
+
+a:hover {
+    font-style: oblique;
+    font-family: fantasy;
+    text-decoration: wavy;
+}
+
+.Header {
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    width: 85%;
+    max-width: 1800px;
+    height: 150px;
+    margin: 0px 0px 5px 0px;
+    border-radius: 20px;
+    background-color: #445843;
+    float: right;
+}
+.titrehabitats {
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 97.3%;
+    height: 200px;
+    margin:10px 0 15px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #445843;
+    color: yellow;
+}
+.explicatif {
+    font-size: xx-large;
+    text-align: center;
+    margin: 20px auto 10px 0;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #445843;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+#habitattigre {
+    display: flex;
+    background: url(https://cdn.pixabay.com/photo/2015/09/26/21/33/suspension-bridge-959853_1280.jpg) ;
+    margin: 20px 0 20px 0;
+    border-radius: 20px;
+    background-size: cover;
+    min-height: 100vh;
+   
+}
+.foret {
+    display: flex;
+    background-color: #85a57a;
+    border-radius: 20px;
+    margin: 20px;
+    height: 2em;
+    width: 15em;
+    justify-content: center;
+    align-content: center;
+}
+    
+
+.liste-cachee {
+    display: none;
+    margin-top: 20px;
+    padding: 0;
+    list-style-type: none;
+    color: #F0F0FF;
+}
+
+.liste-visible {
+    display: block;
+}
+.tigrou {
+    border-radius: 20px;
+}
+
+/*Bas de la page */
+.Mentions {
+    font-size: x-large;
+    gap: 40px;
+    width: 100%;
+    max-width: 967px;
+    height: 180px;
+    border-radius: 20px;
+    background-color: #445843;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a {
+    color: #F0F0FF;
+}
+
+.imgbasg,
+.imgbasd {
+    width: 100%;
+    max-width: 254px;
+    height: 180px;
+    margin: 0 15px 15px 0;
+    padding-bottom: 10px;
+    border-radius: 20px;
+}
+
+.imgbasd {
+    float: right;
+}
+
+.imgbasg {
+    float: left;
+}
