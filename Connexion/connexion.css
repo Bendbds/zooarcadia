@@ -51,7 +51,36 @@ a:hover {
     float: right;
     flex-wrap: wrap; 
 }
-.avis {
+.Menu {
+    display:none;
+    border-radius: 10px;
+    width: 200px;
+    margin: 20px 0 20px 2em;
+    background-color: #445843;
+    cursor: pointer;
+    height: 10vh;
+}
+@media (max-width: 768px) {
+    .Menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .Header {
+        display: none; /* Cache les liens de navigation sur les petits écrans */
+        flex-direction: column;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        padding: 10px;
+    }
+}
+
+.connexionemploye {
     font-size: x-large;
     display: flex;
     justify-content: center;
@@ -63,43 +92,56 @@ a:hover {
     border-radius: 20px;
     background-color: #445843;
     color: yellow;
+    flex-wrap: wrap; 
 }
-form {
+#formulaire {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35vh; /*La hauteur du body est de 100% de la hauteur de la fenêtre (viewport).*/
-    margin: 0 0 15px 0; 
-    background-color: #445843;
+    width: 97.3%;
+    height: 150px;
+    margin:10px 0 15px 0;
+    padding: 20px;
     border-radius: 20px;
+    background-color: #445843;
+    color: yellow;
 }
 label {
-    display: flex;
-    text-align: center;
+    display: block;
     font-style: italic;
     color: yellow;
     font-weight: bold;
+
 }
-#pseudo {
-    display: flex;
-    border-radius: 20px;
-    width: 150px;
+#mail {
+    width: 100%;
+    max-width: 200px;
     height: 20px;
-    align-items: center;
 }
 
-#ameliorer {
+#motdepasse {
+    width: 100%;
+    max-width: 200px;
+    height: 20px; 
+}
 
-    display: flex;
-    border-radius: 20px;
+#mail, #motdepasse {
+    display:block;
+    border-radius: 10px;
+    margin: 20px;
+
 }
  #bouton {
     display: flex;
-    align-items: right;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
     border-radius: 20px;
     height: 2em;
     background-color: #85a57a;
+    cursor: pointer;
  }
+
 /*Bas de la page */
 .Mentions {
     font-size: x-large;

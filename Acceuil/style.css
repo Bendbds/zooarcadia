@@ -1,14 +1,14 @@
 html {
     width: 100%;
     height: 100%;
-    padding: auto;
     background-color: #85a57a;
     font-family: Geneva, Tahoma, sans-serif;
 }
 
 #cover {
-    background: url(https://cdn.pixabay.com/photo/2015/08/16/17/35/sword-891356_1280.jpg);
+    background-image: url(https://cdn.pixabay.com/photo/2015/08/16/17/35/sword-891356_1280.jpg);
     width: 200px;
+    min-width: 200px;
     height: 150px;
     border-radius: 20px;
     display: flex;
@@ -22,8 +22,8 @@ html {
     align-items: center;
     justify-content: center;
 }
-.acceuil {
-    font-family: Geneva, Tahoma, sans-serif;
+
+.accueil {
     font-size: x-large;
     font-weight: bold;
     color: #445843;
@@ -41,17 +41,16 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 120px;
-    width: 85%;
-    max-width: 1800px;
-    height: 150px;
-    margin: 0px 0px 5px 0px;
-   
+    gap: 90px;
+    width: 100%;
+    max-width: 1300px;
+    height: 6.5em;
+
     border-radius: 20px;
     background-color: #445843;
     float: right;
+    flex-wrap: wrap; 
 }
-
 .image-panda {
     width: 100%;
     height: auto;
@@ -245,34 +244,44 @@ p3 {
 .Mentions {
     font-size: x-large;
     gap: 40px;
-    width: 100%;
-    max-width: 905px;
+    width:auto;
+    max-width:40.5em;
     height: 180px;
-    margin: 10px 0 0;
     border-radius: 20px;
     background-color: #445843;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap; 
 }
+
+@media (max-width: 800px) {
+    .Mentions {
+        font-size: small; /* Réduit la taille de la police pour les petits écrans */
+        gap: 10px; /* Réduit l'espace entre les éléments */
+        flex-direction: column;
+    }
+}
+
 a {
     color: #F0F0FF;
 }
 
 .imgbasg,
 .imgbasd {
+    max-width: 16em;
     width: 100%;
-    max-width: 254px;
     height: 180px;
     margin: 0 15px 15px 0;
     padding-bottom: 10px;
+    float: left;
+    clear: left;
     border-radius: 20px;
 }
 
 .imgbasd {
+    margin: 0 0 0 15px;
     float: right;
+    clear: right;
 }
 
-.imgbasg {
-    float: left;
-}
