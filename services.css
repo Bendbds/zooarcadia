@@ -16,7 +16,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
+    margin: 0px 7px 0 8px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);   
 }
 
@@ -41,9 +41,9 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 60px;
     width: 100%;
-    max-width: 1300px;
+    margin: 13.5px 8px 15px 8px;
     height: 20vh;
     border-radius: 10px;
     background-color: #445843;
@@ -62,10 +62,12 @@ a:hover {
     align-items: center;
     color: white;
     font-size: large;
-    z-index: 1002; /* Ensure the button stays on top */
+    z-index: 1002; 
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);  
+    
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .Menu {
         display: flex;
         justify-content: center;
@@ -76,49 +78,46 @@ a:hover {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 178px; /* Adjusted value to push the menu down */
+        top: 150px;
         left: 0;
         right: 0;
         bottom: 0;
         background-color: #445843;
         padding: 20px;
-        z-index: 1000; /* Ensure the menu stays below the button */
-        align-items: center; /* Align items vertically */
-        justify-content: flex-start; /* Align items from the top */
+        z-index: 1000; 
+        align-items: center; 
+        justify-content: flex-start; 
     }
 
     .Header.active {
         display: flex;
         gap: 0;
+        height: 180px;
+        
+    
     }
 
     .Header a {
+        display: flex;
         color: white;
         margin: 0;
         font-size: 1em;
     }
 }
-h2 {
-    display: flex;
-    text-align: center;
-    text-shadow: #333;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .titre-services {
-    font-size: large;
+    font-size: 1.1em;
     display: flex;
     justify-content: center;
-    text-align: center;
     align-items: center;
-    width: 100%;
-    height: 150px;
-    margin:10px 0 15px 0;
-    padding: 20px;
+    width: 100%; 
+    max-width: 1515px; 
+    height: 130px; 
+    margin: 13.5px 8px 15px 8px;
     border-radius: 10px;
     background-color: #445843;
-    color: whitesmoke;
+    color: white; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
@@ -126,10 +125,12 @@ h2 {
     font-size: x-large;
     display: flex;
     font-style: italic;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 50px;
-    margin:20px 0 15px 0;
-    padding: 20px;
+    margin: 13.5px 8px 15px 8px;
+    max-width: 1515px;
     border-radius: 10px;
     background-color: #445843;
     color: whitesmoke;
@@ -156,7 +157,7 @@ h2 {
     flex: 1; /* Rend toutes les cartes de taille égale initialement */
     min-width: 70px;
     height: 100%;
-    border-radius: 30px;
+    border-radius: 10px;
     display: flex;
     align-items: flex-end;
     position: relative;
@@ -212,7 +213,8 @@ h2 {
     align-items: center;
     width: 100%;
     height: 50px;
-    margin:10px 0 15px 0;
+    margin: 13.5px 8px 15px 8px;
+    max-width: 1510px;
     padding: 20px;
     border-radius: 10px;
     background-color: #445843;
@@ -220,17 +222,25 @@ h2 {
     font-style: italic;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
-    
-.liste-cachee-jeu {
-    display: none;
-    margin-top: 20px;
-    padding: 0;
-    list-style-type: none;
-    color: #F0F0FF;
+@media (max-width: 768px) {
+    .titre-services,
+    .menu-restauration,
+    .activites {
+        font-size: 0.8em; /* Réduit la taille de la police pour les petits écrans */
+        gap: 10px; /* Réduit l'espace entre les éléments */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-left: 10px;
+        max-width: 34em;
+    }
 }
 
-.liste-visible-jeu {
-    display: block;
+@media (max-width: 1000px) {
+    .titre-services {
+        display: flex;
+        max-width: auto;
+    }
 }
 
 /*Bas de la page */
@@ -238,21 +248,31 @@ h2 {
     font-size: x-large;
     gap: 40px;
     width:auto;
-    max-width:40.5em;
-    height: 180px;
+    max-width:42em;
+    height: 170px;
     border-radius: 10px;
     background-color: #445843;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
 @media (max-width: 800px) {
     .Mentions {
-        font-size: small; /* Réduit la taille de la police pour les petits écrans */
+        font-size: medium; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
+        width: 100%;
+        max-width: 395px;
+        max-height: 230px;
+    }
+}
+
+@media (max-width: 800px) {
+    .Mentions {
+        margin-left: 25px;
     }
 }
 
@@ -274,7 +294,6 @@ a {
 
 .imgbasd {
     margin: 0 0 0 15px;
-    border-radius: 10px;
     float: right;
     clear: right;
 }
