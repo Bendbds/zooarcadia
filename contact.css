@@ -62,7 +62,7 @@ a:hover {
     align-items: center;
     color: white;
     font-size: large;
-    z-index: 1002; /* Ensure the button stays on top */
+    z-index: 1002; 
 }
 
 @media (max-width: 768px) {
@@ -76,15 +76,15 @@ a:hover {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 178px; /* Adjusted value to push the menu down */
+        top: 178px; 
         left: 0;
         right: 0;
         bottom: 0;
         background-color: #445843;
         padding: 20px;
-        z-index: 1000; /* Ensure the menu stays below the button */
-        align-items: center; /* Align items vertically */
-        justify-content: flex-start; /* Align items from the top */
+        z-index: 1000; 
+        align-items: center; 
+        justify-content: flex-start; 
     }
 
     .Header.active {
@@ -98,141 +98,89 @@ a:hover {
         font-size: 1em;
     }
 }
-h2 {
-    display: flex;
-    text-align: center;
-    text-shadow: #333;
-    align-items: center;
-    justify-content: center;
-}
-
-.titre-services {
-    font-size: large;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-    height: 150px;
-    margin:10px 0 15px 0;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #445843;
-    color: whitesmoke;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-}
-
-.menu-restauration {
+.formcontact {
     font-size: x-large;
     display: flex;
-    font-style: italic;
-    width: 100%;
-    height: 50px;
-    margin:20px 0 15px 0;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    max-width: 1800px; 
+    height: 130px;
+    padding: 20px; 
+    margin: 20px 0 20px 0;
     border-radius: 10px;
+    gap: 0px;
     background-color: #445843;
-    color: whitesmoke;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    height: 400px;
-    display: flex;
-    gap: 10px;
-    margin: 50px auto; /* Centrer le conteneur horizontalement */
-    padding: 0 10px;
-}
-
-.card {
-    flex: 1; /* Rend toutes les cartes de taille égale initialement */
-    min-width: 70px;
-    height: 100%;
-    border-radius: 30px;
-    display: flex;
-    align-items: flex-end;
-    position: relative;
-    overflow: hidden; /* Assurez-vous que le contenu ne dépasse pas */
-    transition: flex 0.5s ease; /* Transition sur la flexibilité */
-}
-
-.card:hover {
-    flex: 7; /* Agrandir la carte survolée */
-}
-
-.card-content {
-    position: relative;
     color: white;
-    padding: 20px;
-}
-
-.card-content > .title {
-    margin-left: 10px;
-    transform: translateY(100%);
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.card:hover .title {
-    opacity: 1;
-    transform: translateY(0);
+    box-sizing: border-box; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+@media (max-width: 768px) {
+.connexionemploye,
+#formulaire {
+    font-size: large; 
+    padding: 15px; 
+}
 }
 
-.backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+@media (max-width: 480px) {
+.connexionemploye,
+#formulaire {
+    font-size: medium; 
+    padding: 10px; 
 }
-
-.activites {
-    font-size: x-large;
-    text-align: center;
+}
+form {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 50px;
-    margin:10px 0 15px 0;
-    padding: 20px;
-    border-radius: 10px;
+    height: 40vh; /*La hauteur du body est de 100% de la hauteur de la fenêtre (viewport).*/
+    margin: 0 0 15px 0; 
     background-color: #445843;
-    color: whitesmoke;
+    border-radius: 20px;
+  
+}
+@media (max-width: 800px) {
+    form {
+        font-size: small; /* Réduit la taille de la police pour les petits écrans */
+        gap: 10px; /* Réduit l'espace entre les éléments */
+        flex-direction: column;
+        display: flex;
+    }
+}
+
+label {
+    display: flex;
+    text-align: center;
     font-style: italic;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    color:greenyellow;
+    font-weight: bold;
 }
-    
-.liste-cachee-jeu {
-    display: none;
-    margin-top: 20px;
-    padding: 0;
-    list-style-type: none;
-    color: #F0F0FF;
-}
-
-.liste-visible-jeu {
-    display: block;
+#pseudo {
+    display: flex;
+    border-radius: 20px;
+    width: 150px;
+    height: 20px;
+    align-items: center;
 }
 
+#ameliorer {
+
+    display: flex;
+    border-radius: 20px;
+    max-width: 30em;
+}
+ #bouton {
+    display: flex;
+    align-items: right;
+    border-radius: 20px;
+    height: 2em;
+    background-color: #85a57a;
+ }
+ input {
+    border-radius: 20px;
+ }
 /*Bas de la page */
 .Mentions {
     font-size: x-large;
@@ -240,7 +188,7 @@ h2 {
     width:auto;
     max-width:40.5em;
     height: 180px;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #445843;
     display: flex;
     align-items: center;
@@ -269,12 +217,11 @@ a {
     padding-bottom: 10px;
     float: left;
     clear: left;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .imgbasd {
     margin: 0 0 0 15px;
-    border-radius: 10px;
     float: right;
     clear: right;
 }
