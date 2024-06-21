@@ -41,7 +41,7 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 60px;
     width: 100%;
     max-width: 1300px;
     height: 20vh;
@@ -63,9 +63,10 @@ a:hover {
     color: white;
     font-size: large;
     z-index: 1002; 
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .Menu {
         display: flex;
         justify-content: center;
@@ -186,9 +187,18 @@ label {
 
 @media (max-width: 800px) {
     .Mentions {
-        font-size: small; /* Réduit la taille de la police pour les petits écrans */
+        font-size: medium; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
+        width: 100%;
+        max-width: 395px;
+        max-height: 230px;
+    }
+}
+
+@media (max-width: 800px) {
+    .Mentions {
+        margin-left: 20px;
     }
 }
 

@@ -41,7 +41,7 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 70px;
+    gap: 60px;
     width: 100%;
     max-width: 1300px;
     height: 20vh;
@@ -62,10 +62,11 @@ a:hover {
     align-items: center;
     color: white;
     font-size: large;
-    z-index: 1002; /* Ensure the button stays on top */
+    z-index: 1002; 
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .Menu {
         display: flex;
         justify-content: center;
@@ -76,15 +77,15 @@ a:hover {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 178px; /* Adjusted value to push the menu down */
+        top: 178px; 
         left: 0;
         right: 0;
         bottom: 0;
         background-color: #445843;
         padding: 20px;
-        z-index: 1000; /* Ensure the menu stays below the button */
-        align-items: center; /* Align items vertically */
-        justify-content: flex-start; /* Align items from the top */
+        z-index: 1000; 
+        align-items: center; 
+        justify-content: flex-start; 
     }
 
     .Header.active {
@@ -222,29 +223,29 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Use a percentage width for responsiveness */
-    max-width: 1600px; /* Optional: set a maximum width */
-    height: auto; /* Let the height adjust automatically */
-    padding: 20px; /* Add padding instead of fixed height */
+    width: 100%; 
+    max-width: 1600px; 
+    height: auto; 
+    padding: 20px; 
     margin-bottom: 20px;
     border-radius:10px;
     background-color: #445843;
     color: white;
-    box-sizing: border-box; /* Ensure padding is included in the width/height */
+    box-sizing: border-box; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
 @media (max-width: 768px) {
     .avis {
-        font-size: large; /* Adjust font size for smaller screens */
-        padding: 15px; /* Adjust padding for smaller screens */
+        font-size: large; 
+        padding: 15px; 
     }
 }
 
 @media (max-width: 480px) {
     .avis {
-        font-size: medium; /* Further adjust font size for very small screens */
-        padding: 10px; /* Further adjust padding for very small screens */
+        font-size: medium; 
+        padding: 10px; 
     }
 }
 
@@ -336,9 +337,8 @@ article {
     }
 }
 
-
 .image-train, .image-restauration {
-    height: 30em; /* Maintain aspect ratio */
+    height: 30em; 
     border-radius:10px;
     max-width: 650px;
 }
@@ -373,13 +373,30 @@ article {
 
 @media (max-width: 800px) {
     .Mentions,
-    .explicatif,
-    .horaires {
+    .explicatif {
         font-size: medium; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
+        width: 100%;
+        max-width: 395px;
+        max-height: 230px;
     }
 }
+@media (max-width: 800px) {
+    .Mentions {
+        margin-left: 20px;
+    }
+}
+@media (max-width: 800px) {
+    .horaires {
+    font-size: medium; /* Réduit la taille de la police pour les petits écrans */
+    gap: 10px; /* Réduit l'espace entre les éléments */
+    flex-direction: column;
+    width: 100%;
+    max-height: 350px;
+    }
+}
+
 @media (max-width: 800px) {
     .text-panda {
         font-size: small; /* Réduit la taille de la police pour les petits écrans */
@@ -390,6 +407,14 @@ article {
 
 a {
     color: #F0F0FF;
+}
+@media (max-width: 800px) {
+    .image-girafes,
+    .image-broceliande {
+        width: 100%;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
 }
 
 .imgbasg,
