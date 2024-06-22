@@ -25,3 +25,26 @@ document.addEventListener('DOMContentLoaded', () => {
         headerNav.classList.toggle('active');
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('button.foret, button.savane, button.foret-montagneuse, button.antarctique');
+    buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const buttonClass = event.target.className;
+            const countKey = `count_${buttonClass}`;
+
+          
+            let count = localStorage.getItem(countKey);
+            if (!count) {
+                count = 0;
+            }
+
+            count = parseInt(count) + 1;
+
+           
+            localStorage.setItem(countKey, count);
+
+           
+            console.log(`${buttonClass} clicked ${count} times`);
+        });
+    });
+});
