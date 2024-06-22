@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem(countKey, count);
 
            
-            console.log(`${buttonClass} clicked ${count} times`);
+            console.log(`l'habitat ${buttonClass} a été cliqué ${count} fois`);
         });
     });
 });
