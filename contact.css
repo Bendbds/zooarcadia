@@ -139,7 +139,7 @@ form {
     height: 40vh; /*La hauteur du body est de 100% de la hauteur de la fenêtre (viewport).*/
     margin: 0 0 15px 0; 
     background-color: #445843;
-    border-radius: 20px;
+    border-radius: 10px;
   
 }
 @media (max-width: 800px) {
@@ -160,7 +160,7 @@ label {
 }
 #pseudo {
     display: flex;
-    border-radius: 20px;
+    border-radius: 10px;
     width: 150px;
     height: 20px;
     align-items: center;
@@ -169,18 +169,18 @@ label {
 #ameliorer {
 
     display: flex;
-    border-radius: 20px;
+    border-radius: 10px;
     max-width: 30em;
 }
  #bouton {
     display: flex;
     align-items: right;
-    border-radius: 20px;
+    border-radius: 10px;
     height: 2em;
     background-color: #85a57a;
  }
  input {
-    border-radius: 20px;
+    border-radius: 10px;
  }
 /*Bas de la page */
 .Mentions {
@@ -189,7 +189,7 @@ label {
     width:auto;
     max-width:41em;
     height: 180px;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: #445843;
     display: flex;
     align-items: center;
@@ -227,7 +227,7 @@ a {
     padding-bottom: 10px;
     float: left;
     clear: left;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .imgbasd {
