@@ -18,6 +18,7 @@ html {
     justify-content: center;
     margin-right: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);   
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
 .navbar {
@@ -107,10 +108,10 @@ a:hover {
     .Header.active {
         display: flex;
         gap: 0;
-        max-width: 395px;
-        margin-left: 8px;
+        width: auto;
         }
     }
+    
 .image-panda {
     width: 100%;
     height: auto;
@@ -120,8 +121,7 @@ a:hover {
 }
 
 .text-panda {
-    left: 40px;
-    top: 150px;
+    top: 120px;
     font-weight: bolder;
     max-width: 1400px;
     font-size: 36px;
@@ -130,9 +130,8 @@ a:hover {
     position: absolute;
     padding: 50px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-    flex-wrap: wrap;
+  
 }
-
 
 .explicatif {
     font-size: xx-large;
@@ -150,16 +149,23 @@ a:hover {
     float: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
+
 @media (max-width: 1200px) {
     .text-panda {
-        font-size: larger; /* Réduit la taille de la police pour les petits écrans */
-        gap: 1px; /* Réduit l'espace entre les éléments */
-        flex-direction: column;
+        font-size: large; /* Réduit la taille de la police pour les petits écrans */   
     }
 }
+
+@media (max-width: 800px) {
+    .text-panda {
+        font-size: small; /* Réduit la taille de la police pour les petits écrans */
+    }
+}
+
+
 @media (max-width: 1200px) {
     .explicatif {
-        font-size: x-large; /* Réduit la taille de la police pour les petits écrans */
+        font-size: 1.7em; /* Réduit la taille de la police pour les petits écrans */
         gap: 1px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
     }
@@ -251,6 +257,7 @@ a:hover {
     .avis {
         font-size: large; 
         padding: 15px; 
+        margin-top: 20px;
     }
 }
 
@@ -261,7 +268,7 @@ a:hover {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .articles-container {
         font-size: small; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
@@ -390,15 +397,16 @@ article {
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
         width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .explicatif {
         max-width: 395px;
         max-height: 230px;
     }
 }
-@media (max-width: 800px) {
-    .Mentions {
-        margin-left: 20px;
-    }
-}
+
 @media (max-width: 800px) {
     .horaires {
     font-size: medium; /* Réduit la taille de la police pour les petits écrans */
@@ -406,20 +414,14 @@ article {
     flex-direction: column;
     width: 100%;
     max-height: 350px;
-    }
-}
-
-@media (max-width: 800px) {
-    .text-panda {
-        font-size: small; /* Réduit la taille de la police pour les petits écrans */
-        gap: 10px; /* Réduit l'espace entre les éléments */
-        flex-direction: column;
+    margin-bottom: 20px;
     }
 }
 
 a {
     color: #F0F0FF;
 }
+
 @media (max-width: 800px) {
     .image-girafes,
     .image-broceliande {
@@ -447,9 +449,8 @@ a {
     clear: right;
 }
 
-
 /* Styles pour petits écrans */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     #imgfooter {
         display: flex;
         flex-direction: column;

@@ -17,7 +17,8 @@ html {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);   
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);   
 }
 
 .navbar {
@@ -106,8 +107,7 @@ a:hover {
     .Header.active {
         display: flex;
         gap: 0;
-        max-width: 395px;
-        margin-left: 8px;
+        width: auto;
         }
     }
     
@@ -131,15 +131,6 @@ a:hover {
         font-size: medium; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
-        width: 100%;
-        max-width: 395px;
-        max-height: 230px;
-    }
-}
-
-@media (max-width: 800px) {
-    .Mentions {
-        margin-left: 20px;
     }
 }
 
@@ -167,7 +158,7 @@ a {
 }
 
 /* Styles pour petits écrans */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     #imgfooter {
         display: flex;
         flex-direction: column;

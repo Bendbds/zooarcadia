@@ -17,7 +17,8 @@ html {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);   
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);    
 }
 
 .navbar {
@@ -77,15 +78,15 @@ a:hover {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 178px; /* Adjusted value to push the menu down */
+        top: 178px; 
         left: 0;
         right: 0;
         bottom: 0;
         background-color: #445843;
         padding: 20px;
-        z-index: 1000; /* Ensure the menu stays below the button */
-        align-items: center; /* Align items vertically */
-        justify-content: flex-start; /* Align items from the top */
+        z-index: 1000; 
+        align-items: center; 
+        justify-content: flex-start; 
     }
 
     .Header.active {
@@ -105,8 +106,7 @@ a:hover {
     .Header.active {
         display: flex;
         gap: 0;
-        max-width: 395px;
-        margin-left: 8px;
+        width: auto;
         }
     }
     
@@ -115,30 +115,30 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Use a percentage width for responsiveness */
-    max-width: 1600px; /* Optional: set a maximum width */
-    height: 130px; /* Let the height adjust automatically */
-    padding: 20px; /* Add padding instead of fixed height */
+    width: 100%; 
+    max-width: 1600px; 
+    height: 130px; 
+    padding: 20px; 
     margin: 20px 0 20px 0;
     border-radius: 10px;
     background-color: #445843;
     color: white;
-    box-sizing: border-box; /* Ensure padding is included in the width/height */
+    box-sizing: border-box; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
 @media (max-width: 768px) {
     .avis {
-        font-size: large; /* Adjust font size for smaller screens */
+        font-size: large; 
         padding: 15px;
-        margin-top: 20px; /* Adjust padding for smaller screens */
+        margin-top: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .avis {
-        font-size: medium; /* Further adjust font size for very small screens */
-        padding: 10px; /* Further adjust padding for very small screens */
+        font-size: medium; 
+        padding: 10px; 
     }
 }
 
@@ -146,23 +146,34 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 35vh; /*La hauteur du body est de 100% de la hauteur de la fenêtre (viewport).*/
+    height: 45vh; 
     margin: 0 0 15px 0; 
     background-color: #445843;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
+@media (max-width: 480px) {
+    form {
+        padding: 5px;
+        height: 280px; /* Further adjust padding for very small screens */
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 label {
     display: flex;
     text-align: center;
     font-style: italic;
+    margin: 10px;
     color: greenyellow;
     font-weight: bold;
 }
 
 #pseudo {
     display: flex;
+    margin: 10px;
     border-radius: 10px;
     width: 150px;
     height: 20px;
@@ -171,8 +182,16 @@ label {
 
 #ameliorer {
     display: flex;
-    width: 60vh;
+    width: 100vh;
     border-radius: 10px;
+    margin: 10px;
+   
+}
+
+@media (max-width: 800px) {
+    #ameliorer {
+        max-width: 350px;   
+    }
 }
 
  #bouton {
@@ -180,9 +199,9 @@ label {
     align-items: right;
     border-radius: 10px;
     height: 2em;
-    margin-top: 5px;
+    margin: 5px 0 0 10px;
     background-color: #85a57a;
- }
+}
 
 /*Bas de la page */
 .Mentions {
@@ -204,14 +223,6 @@ label {
         font-size: medium; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
-        width: 100%;
-        max-width: 395px;
-        max-height: 230px;
-    }
-}
-@media (max-width: 800px) {
-    .Mentions {
-        margin-left: 20px;
     }
 }
 
@@ -238,7 +249,7 @@ a {
 }
 
 /* Styles pour petits écrans */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     #imgfooter {
         display: flex;
         flex-direction: column;

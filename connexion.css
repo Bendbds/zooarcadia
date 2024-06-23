@@ -17,7 +17,8 @@ html {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);   
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  
 }
 
 .navbar {
@@ -101,25 +102,23 @@ a:hover {
     }
 }
 
-
 @media (max-width: 480px) {
     .Header.active {
         display: flex;
         gap: 0;
-        max-width: 395px;
-        margin-left: 8px;
+        width: auto;
         }
     }
     
 .connexionemploye,
 #formulaire {
-        font-size: x-large;
+        font-size: large;
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
         max-width: 1800px; 
-        height: 130px;
+        height: 120px;
         padding: 20px; 
         margin: 20px 0 20px 0;
         border-radius: 10px;
@@ -130,47 +129,45 @@ a:hover {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
     }
     
-    @media (max-width: 768px) {
-        .connexionemploye,
-        #formulaire {
-            font-size: large; 
-            padding: 15px; 
+    @media (max-width: 1060px) {
+        .connexionemploye {
+            font-size: medium; 
+            flex-direction: column;
+            text-align: center;
         }
     }
-    
-    @media (max-width: 480px) {
-        .connexionemploye,
+        @media (max-width: 1060px) {
         #formulaire {
             font-size: medium; 
-            padding: 10px; 
+            flex-direction: column;
+            height: 200px;
         }
     }
+    @media (min-width: 1060px) {
+        label,
+        #bouton {
+            margin-left: 20px;
+            margin-left: 20px;
+        }
+    } 
 
 label {
     display: block;
     font-style: italic;
     color: greenyellow;
     font-weight: bold;
-
-}
-#mail {
-    width: 100%;
-    max-width: 200px;
-    height: 20px;
-}
-
-#motdepasse {
-    width: 100%;
-    max-width: 200px;
-    height: 20px; 
+    align-items: center;
+    justify-content: center;
+ 
 }
 
 #mail, #motdepasse {
-    display:block;
+    max-width: 200px;
     border-radius: 10px;
-    margin: 20px;
-
+    margin: 10px;
+    height: 25px;
 }
+
  #bouton {
     display: flex;
     justify-content: center;
@@ -180,6 +177,7 @@ label {
     height: 2em;
     background-color: #85a57a;
     cursor: pointer;
+    flex-wrap: wrap; 
  }
 
 /*Bas de la page */
@@ -202,15 +200,6 @@ label {
         font-size: medium; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
-        width: 100%;
-        max-width: 395px;
-        max-height: 230px;
-    }
-}
-
-@media (max-width: 800px) {
-    .Mentions {
-        margin-left: 20px;
     }
 }
 
@@ -237,7 +226,7 @@ a {
 }
 
 /* Styles pour petits écrans */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     #imgfooter {
         display: flex;
         flex-direction: column;
