@@ -92,6 +92,7 @@ a:hover {
     .Header.active {
         display: flex;
         gap: 0;
+        background-color: #5d7854;
     }
 
     .Header a {
@@ -101,15 +102,16 @@ a:hover {
     }
 }
 
+
 @media (max-width: 480px) {
     .Header.active {
         display: flex;
         gap: 0;
-        height: 195px;
-        width: 435px;
+        max-width: 395px;
         margin-left: 8px;
         }
     }
+    
 .titrehabitats { /* logo habitats*/
     font-size: 2.5em;
     display: flex;
