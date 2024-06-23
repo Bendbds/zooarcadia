@@ -410,10 +410,10 @@ article {
     }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 450px) {
     .explicatif {
-        max-width: 375px; /* Largeur de l'écran de l'iPhone 11 moins les marges */
-        max-height: 667px; /* Hauteur de l'écran de l'iPhone 11 en mode portrait */
+        max-width: 335px; 
+        max-height: 250px; 
     }
 }
 
@@ -438,6 +438,7 @@ a {
     .image-girafes,
     .image-broceliande {
         width: 100%;
+        height: 400px;
         flex-direction: column;
         box-sizing: border-box;
     }
