@@ -6,28 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
     menuButton.addEventListener('click', () => {
         headerNav.classList.toggle('active');
     });
-});
 
-document.querySelector('.btntrain').addEventListener('click', function() {
-    const liste = document.querySelector('.liste-cachee-train');
-    liste.classList.toggle('liste-visible-train');
-});
+    const cards = document.querySelectorAll('.card');
 
-document.querySelector('.btnairedejeu').addEventListener('click', function() {
-    const liste = document.querySelector('.liste-cachee-jeu');
-    liste.classList.toggle('liste-visible-jeu');
-});
+    cards.forEach(card => {
+        card.addEventListener('touchstart', function () {
+            cards.forEach(c => c.classList.remove('active')); // Retirer la classe active des autres cartes
+            card.classList.add('active'); // Ajouter la classe active à la carte touchée
+        });
+    });
 
-document.querySelector('.btnvisite').addEventListener('click', function() {
-    const liste = document.querySelector('.liste-cachee-visite');
-    liste.classList.toggle('liste-visible-visite');
-});
-document.querySelector('.btnvisite').addEventListener('click', function() {
-    const image = document.getElementById('plan');
-    image.classList.toggle('animate');
-});
-document.querySelector('.title-aire').addEventListener('click', function() {
-    const liste = document.querySelector('.liste-cachee-jeu');
-    liste.classList.toggle('liste-visible-jeu');
+    document.addEventListener('touchstart', function (event) {
+        if (!event.target.closest('.card')) {
+            cards.forEach(card => card.classList.remove('active')); // Retirer la classe active si on touche en dehors d'une carte
+        }
+    });
 });
 

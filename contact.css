@@ -17,7 +17,8 @@ html {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);   
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);   
 }
 
 .navbar {
@@ -106,8 +107,7 @@ a:hover {
     .Header.active {
         display: flex;
         gap: 0;
-        max-width: 395px;
-        margin-left: 8px;
+        width: auto;
         }
     }
     
@@ -129,21 +129,6 @@ a:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
-@media (max-width: 768px) {
-.connexionemploye,
-#formulaire {
-    font-size: large; 
-    padding: 15px; 
-}
-}
-
-@media (max-width: 480px) {
-.connexionemploye,
-#formulaire {
-    font-size: medium; 
-    padding: 10px; 
-}
-}
 form {
     display: flex;
     justify-content: center;
@@ -155,8 +140,9 @@ form {
   
 }
 @media (max-width: 800px) {
-    form {
-        font-size: small; /* Réduit la taille de la police pour les petits écrans */
+    form,
+    .formcontact {
+        font-size: medium; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
         display: flex;
@@ -170,13 +156,6 @@ label {
     color:greenyellow;
     font-weight: bold;
 }
-#pseudo {
-    display: flex;
-    border-radius: 10px;
-    width: 150px;
-    height: 20px;
-    align-items: center;
-}
 
 #ameliorer {
 
@@ -184,16 +163,19 @@ label {
     border-radius: 10px;
     max-width: 30em;
 }
+
  #bouton {
     display: flex;
     align-items: right;
     border-radius: 10px;
     height: 2em;
     background-color: #85a57a;
- }
- input {
+}
+
+input {
     border-radius: 10px;
- }
+}
+
 /*Bas de la page */
 .Mentions {
     font-size: x-large;
@@ -214,15 +196,6 @@ label {
         font-size: medium; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
-        width: 100%;
-        max-width: 395px;
-        max-height: 230px;
-    }
-}
-
-@media (max-width: 800px) {
-    .Mentions {
-        margin-left: 20px;
     }
 }
 
@@ -249,7 +222,7 @@ a {
 }
 
 /* Styles pour petits écrans */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     #imgfooter {
         display: flex;
         flex-direction: column;
