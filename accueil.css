@@ -165,9 +165,10 @@ a:hover {
 
 @media (max-width: 1200px) {
     .explicatif {
-        font-size: 1.7em; /* Réduit la taille de la police pour les petits écrans */
+        font-size: 2em; /* Réduit la taille de la police pour les petits écrans */
         gap: 1px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
+        width: 100%;
     }
 }
 
@@ -397,6 +398,8 @@ article {
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
         width: 100%;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -406,6 +409,15 @@ article {
         max-height: 230px;
     }
 }
+
+@media (max-width: 414px) {
+    .explicatif {
+        max-width: 375px; /* Largeur de l'écran de l'iPhone 11 moins les marges */
+        max-height: 667px; /* Hauteur de l'écran de l'iPhone 11 en mode portrait */
+    }
+}
+
+
 
 @media (max-width: 800px) {
     .horaires {

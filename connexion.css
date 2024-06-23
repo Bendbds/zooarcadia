@@ -170,6 +170,7 @@ label {
 
  #bouton {
     display: flex;
+    width: 9em;
     justify-content: center;
     align-content: center;
     align-items: center;

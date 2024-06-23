@@ -118,7 +118,7 @@ a:hover {
     align-items: center;
     width: 100%; 
     max-width: 1800px; 
-    height: 130px;
+    height: 120px;
     padding: 20px; 
     margin: 20px 0 20px 0;
     border-radius: 10px;
@@ -133,7 +133,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40vh; /*La hauteur du body est de 100% de la hauteur de la fenêtre (viewport).*/
+    height: 45vh; /*La hauteur du body est de 100% de la hauteur de la fenêtre (viewport).*/
     margin: 0 0 15px 0; 
     background-color: #445843;
     border-radius: 10px;
@@ -155,10 +155,11 @@ label {
     font-style: italic;
     color:greenyellow;
     font-weight: bold;
+    margin: 3px;
 }
 
 #ameliorer {
-
+    margin-top: 10px;
     display: flex;
     border-radius: 10px;
     max-width: 30em;
@@ -170,6 +171,7 @@ label {
     border-radius: 10px;
     height: 2em;
     background-color: #85a57a;
+    margin-top: 10px;
 }
 
 input {
