@@ -224,3 +224,28 @@ a {
     clear: right;
 }
 
+/* Styles pour petits écrans */
+@media (max-width: 768px) {
+    #imgfooter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        height: auto;
+        margin: 0 0;
+        float: none;
+        clear: none;
+    }
+    .imgbasd,
+    .imgbasg {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 15px 0;
+        float: none;
+        clear: none;
+    }
+}
+
