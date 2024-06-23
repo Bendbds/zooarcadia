@@ -222,7 +222,7 @@ a:hover {
     font-style: italic;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
-@media (max-width: 768px) {
+@media (max-width: 480px) {
     .titre-services,
     .menu-restauration,
     .activites {
@@ -236,12 +236,7 @@ a:hover {
     }
 }
 
-@media (max-width: 1000px) {
-    .titre-services {
-        display: flex;
-        max-width: auto;
-    }
-}
+
 
 /*Bas de la page */
 .Mentions {
