@@ -99,6 +99,16 @@ a:hover {
         font-size: 1em;
     }
 }
+
+@media (max-width: 480px) {
+    .Header.active {
+        display: flex;
+        gap: 0;
+        height: 195px;
+        width: 435px;
+        margin-left: 8px;
+        }
+    }
 .image-panda {
     width: 100%;
     height: auto;
