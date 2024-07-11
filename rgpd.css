@@ -44,7 +44,6 @@ a:hover {
     align-items: center;
     gap: 60px;
     width: 100%;
-    max-width: 1300px;
     height: 20vh;
     border-radius: 10px;
     background-color: #445843;
@@ -114,7 +113,6 @@ a:hover {
     font-size: x-large;
     gap: 40px;
     width:auto;
-    max-width:41em;
     height: 180px;
     border-radius: 10px;
     background-color: #445843;
