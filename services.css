@@ -54,7 +54,7 @@ a:hover {
     align-items: center;
     gap: 60px;
     width: 100%;
-    margin: 13px 5px 11.5px 10px;
+    margin: 13.5px 8px 11.5px 10px;
     height: 20vh;
     border-radius: 10px;
     background-color: #445843;
@@ -130,7 +130,7 @@ a:hover {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: calc(100% - 12px); 
+        width: calc(100% - 16px); 
         height: 120px; 
         margin: 13px 10px 15px 8px;
         border-radius: 10px;
@@ -147,9 +147,9 @@ a:hover {
     font-style: italic;
     align-items: center;
     justify-content: center;
-    width: calc(100% - 12px);
+    width: calc(100% - 16px);
     height: 50px;
-    margin: 20px 5px 15px 8px;
+    margin: 20px 10px 15px 8px;
     max-width: 1520px;
     border-radius: 10px;
     background-color: #445843;
