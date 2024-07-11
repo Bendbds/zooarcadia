@@ -44,7 +44,6 @@ a:hover {
     align-items: center;
     gap: 60px;
     width: 100%;
-    max-width: 1300px;
     height: 20vh;
     border-radius: 10px;
     background-color: #445843;
@@ -116,7 +115,6 @@ a:hover {
     justify-content: center;
     align-items: center;
     width: 100%; 
-    max-width: 1600px; 
     height: 120px; 
     padding: 20px; 
     margin: 20px 0 20px 0;
@@ -208,7 +206,6 @@ label {
     font-size: x-large;
     gap: 40px;
     width:auto;
-    max-width:41em;
     height: 180px;
     border-radius: 10px;
     background-color: #445843;
