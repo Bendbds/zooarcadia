@@ -18,7 +18,7 @@ html {
     justify-content: center;
     margin-right: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);  
 }
 
 .navbar {
@@ -47,7 +47,8 @@ a:hover {
     height: 20vh;
     border-radius: 10px;
     background-color: #445843;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .Menu {
@@ -64,6 +65,7 @@ a:hover {
     font-size: large;
     z-index: 1002; 
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 1000px) {
@@ -125,6 +127,7 @@ a:hover {
         color: white;
         box-sizing: border-box; 
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     }
     
     @media (max-width: 1060px) {
@@ -172,11 +175,12 @@ label {
     justify-content: center;
     align-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 8px;
     height: 2em;
     background-color: #85a57a;
     cursor: pointer;
     flex-wrap: wrap; 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
  }
 
 /*Bas de la page */
@@ -191,6 +195,7 @@ label {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap; 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 800px) {

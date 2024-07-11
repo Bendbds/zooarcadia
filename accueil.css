@@ -18,7 +18,7 @@ html {
     justify-content: center;
     margin-right: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);   
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
 }
 
 .navbar {
@@ -49,6 +49,7 @@ a:hover {
     border-radius:10px;
     background-color: #445843;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .Menu {
@@ -65,6 +66,7 @@ a:hover {
     font-size: large;
     z-index: 1002; 
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 1000px) {
@@ -84,7 +86,6 @@ a:hover {
         bottom: 0;
         background-color: #445843;
         padding: 20px;
-        z-index: 1000; 
         align-items: center; 
         justify-content: flex-start; 
     }
@@ -118,6 +119,7 @@ a:hover {
     border-radius:10px;
     margin: 20px 0 0;
     background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .text-panda {
@@ -130,6 +132,7 @@ a:hover {
     position: absolute;
     padding: 50px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+
   
 }
 
@@ -147,7 +150,8 @@ a:hover {
     display: flex;
     align-items: center;
     float: left;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
 }
 
 @media (max-width: 1200px) {
@@ -179,6 +183,7 @@ a:hover {
     border-radius:10px;
     display: flex;
     float: right;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .image-broceliande {
@@ -188,6 +193,7 @@ a:hover {
     border-radius:10px;
     display: flex;
     float: left;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .horaires {
@@ -202,6 +208,7 @@ a:hover {
     font-size: xx-large;
     margin: 0 0 10px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .title {
@@ -213,6 +220,7 @@ a:hover {
     font-weight: bold;
     border-radius:10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .horaires li {
@@ -248,6 +256,7 @@ a:hover {
     color: white;
     box-sizing: border-box; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -294,6 +303,7 @@ article {
     align-items: center;
     font-size: 22px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 #services-container {
@@ -338,6 +348,7 @@ article {
     align-items: center;
     color: #F0F0FF;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+   
 }
 
 /* Média queries pour des tailles d'écran spécifiques */
@@ -357,6 +368,7 @@ article {
     height: 30em; 
     border-radius:10px;
     max-width: 100%;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .description { /*texte train et restau*/
@@ -370,7 +382,8 @@ article {
     justify-content: center;
     align-items: center;
     color: #F0F0FF;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
 }
 
 .Mentions {
@@ -384,6 +397,7 @@ article {
     background-color: #445843;
     align-items: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 800px) {
