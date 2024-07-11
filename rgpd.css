@@ -113,7 +113,7 @@ a:hover {
     font-size: x-large;
     gap: 40px;
     width:auto;
-    height: 180px;
+    height: 170px;
     border-radius: 10px;
     background-color: #445843;
     display: flex;
@@ -138,20 +138,22 @@ a {
 
 .imgbasg,
 .imgbasd {
-    max-width: 16em;
-    width: 100%;
-    height: 180px;
-    margin: 0 15px 15px 0;
-    padding-bottom: 10px;
+    max-width: 16em; /* Conserver la largeur maximale */
+    width: calc(100% - 10px); /* Ajuster pour les marges */
+    height: 170px;
+    margin: 0px 0px 5px 0px; /* Réduire les marges latérales et ajuster les autres marges */
     float: left;
     clear: left;
     border-radius: 10px;
 }
 
 .imgbasd {
-    margin: 0 0 0 15px;
     float: right;
     clear: right;
+    margin-left: 5px;
+}
+.imgbasg {
+    margin-right: 5px;
 }
 
 /* Styles pour petits écrans */
