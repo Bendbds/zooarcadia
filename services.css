@@ -57,6 +57,7 @@ a:hover {
     margin: 13.5px 8px 11.5px 10px;
     height: 20vh;
     border-radius: 10px;
+    z-index: 1000;
     background-color: #445843;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
@@ -105,6 +106,7 @@ a:hover {
     .Header.active {
         display: flex;
         gap: 0;
+        height: 180px;
         background-color: #5d7854;
     }
 
