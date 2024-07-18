@@ -148,18 +148,22 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45vh; 
+    height:43vh; 
     margin: 0 0 15px 0; 
     background-color: #445843;
     border-radius: 10px;
     margin-bottom: 20px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
+@media (max-width: 800px) {
+    form {
+        height: 300px;   
+    }
+}
 
 @media (max-width: 480px) {
     form {
         padding: 5px;
-        height: 280px; /* Further adjust padding for very small screens */
         justify-content: center;
         align-items: center;
     }
@@ -243,6 +247,7 @@ a {
     float: left;
     clear: left;
     border-radius: 10px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .imgbasd {

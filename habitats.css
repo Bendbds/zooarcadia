@@ -189,6 +189,7 @@ a:hover {
     border-radius: 10px;
     display: flex;
     height: 70vh;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -354,6 +355,7 @@ a {
     float: left;
     clear: left;
     border-radius: 10px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .imgbasd {
@@ -372,7 +374,9 @@ a {
     .pandaroux,
     .manchot {
         max-height: 30vh;
-        max-width: 45vh;   
+        max-width: 45vh;
+       
+           
     }
 }
 

@@ -134,7 +134,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45vh; /*La hauteur du body est de 100% de la hauteur de la fenêtre (viewport).*/
+    height: 50vh; /*La hauteur du body est de 100% de la hauteur de la fenêtre (viewport).*/
     margin: 0 0 15px 0; 
     background-color: #445843;
     border-radius: 10px;
@@ -142,12 +142,17 @@ form {
   
 }
 @media (max-width: 800px) {
-    form,
-    .formcontact {
+    form {
         font-size: medium; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
         display: flex;
+        height: 350px;
+    }
+}
+@media (max-width: 800px) {
+    .formcontact {
+        font-size: medium; /* Réduit la taille de la police pour les petits écrans */
     }
 }
 
@@ -217,6 +222,7 @@ a {
     float: left;
     clear: left;
     border-radius: 10px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .imgbasd {
