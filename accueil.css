@@ -1,14 +1,18 @@
-html {
-    width: 100%;
-    height: 100%;
-    background-color: #9cba92;
+html, body {
+    padding: 0;
+    margin: 10px 8px 10px 10px;
     font-family: Geneva, Tahoma, sans-serif;
 }
 
+body {
+    background-image: url('https://e-solution.timyx.com/wp-reseau/benoit/wp-content/uploads/sites/13/2024/08/fond-feuille.svg');
+    background-size: cover; /* Ajuste l'image pour couvrir tout l'arrière-plan */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed; /* Fixe l'image d'arrière-plan */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+}
+
 #cover {
-    background-image: url(https://i.pinimg.com/736x/da/04/20/da04201444c91750ad22c52e857d5ae8.jpg);
-    background-size: 250%;
-    opacity: 80%;
     width: 200px;
     min-width: 200px;
     height: 150px;
@@ -18,7 +22,7 @@ html {
     justify-content: center;
     margin-right: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);   
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.4)); 
 }
 
 .navbar {
@@ -125,29 +129,26 @@ a:hover {
 }
 
 .text-panda {
-    top: 130px;
+    top: 140px;
     font-weight: bolder;
     max-width: 1400px;
     font-size: 36px;
     text-align: center;
-    color: #F0F0FF;
+    color: white;
     position: absolute;
     padding: 50px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-
-  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  
 }
 
 .explicatif {
     font-size: xx-large;
     text-align: center;
     width: 46.7%;
-    max-width: 710px;
     height: 500px;
     margin: 20px auto 10px 0;
     padding: 20px;
     border-radius:10px;
-    background-color: #445843;
+    background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
     display: flex;
     align-items: center;
@@ -164,24 +165,48 @@ a:hover {
 
 @media (max-width: 800px) {
     .text-panda {
-        top: 120px;
+        top: 135px;
         font-size: small; /* Réduit la taille de la police pour les petits écrans */
     }
 }
 
 
-@media (max-width: 1200px) {
+/* Media query pour les écrans plus petits */
+@media (max-width: 1465px) {
     .explicatif {
-        font-size: 2em; /* Réduit la taille de la police pour les petits écrans */
-        gap: 1px; /* Réduit l'espace entre les éléments */
-        flex-direction: column;
-        width: 100%;
+        font-size: x-large;
+        width: 60%;
+        height: auto;
+        margin: 10px auto;
+        float: none;
     }
 }
 
+@media (max-width: 800px) {
+    .explicatif {
+        font-size: large;
+        width: 80%;
+        height: auto;
+        margin: 10px auto;
+        float: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .explicatif {
+        font-size: medium;
+        width: 90%;
+        height: auto;
+        margin: 10px auto 0 auto;
+        padding: 10px;
+        float: none;
+    }
+}
+
+
 .image-girafes {
-    width: 49.5%;
-    margin: 20px 0 20px 0;
+    width: 49.75%;
+    margin: 20px 0 20px 10px;
     height: 540px;
     border-radius:10px;
     display: flex;
@@ -191,7 +216,7 @@ a:hover {
 
 .image-broceliande {
     width: 49.3%;
-    margin: 10px 10px 20px 0;
+    margin: 0px 10px 20px 0;
     height: 540px;
     border-radius:10px;
     display: flex;
@@ -202,7 +227,7 @@ a:hover {
 .horaires {
     list-style-type: none;
     padding: 0;
-    background-color: #445843;
+    background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
     border-radius:10px;
     float: right;
@@ -250,12 +275,13 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 100%; 
     height: auto; 
     padding: 20px; 
-    margin-bottom: 20px;
+    margin: 0 10px 20px 0;
     border-radius:10px;
-    background-color: #445843;
+    background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
     box-sizing: border-box; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
@@ -285,7 +311,8 @@ a:hover {
     }
 }
 h4 {
-    color: lightgrey;
+    color: white;
+    text-decoration: underline;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
 }
 
@@ -297,12 +324,13 @@ h4 {
 
 article {
     flex: 1 1 30%;
-    background-color: #445843;
+    background: linear-gradient(to bottom, #445843, #455e3b);
     height: 300px;
     padding: 20px;
     box-sizing: border-box;
     border-radius:10px;
     text-align: center;
+    color: white;
     align-items: center;
     font-size: 22px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
@@ -343,13 +371,13 @@ article {
     display: flex;
     margin-top: 10px; 
     font-size: 2rem; 
-    background-color: #445843;
+    background: linear-gradient(to bottom, #445843, #455e3b);
     border-radius:10px;
     height: 2em;
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: #F0F0FF;
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
    
 }
@@ -378,13 +406,13 @@ article {
     display: flex;
     margin-top: 10px; 
     font-size: 2rem; 
-    background-color: #445843;
+    background: linear-gradient(to bottom, #445843, #455e3b);
     border-radius:10px;
     height: 4em;
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: #F0F0FF;
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
 }
@@ -404,8 +432,7 @@ article {
 }
 
 @media (max-width: 800px) {
-    .Mentions,
-    .explicatif {
+    .Mentions{
         font-size: medium; /* Réduit la taille de la police pour les petits écrans */
         gap: 10px; /* Réduit l'espace entre les éléments */
         flex-direction: column;
@@ -415,23 +442,7 @@ article {
     }
 }
 
-@media (max-width: 800px) {
-    .explicatif {
-        max-width: 395px;
-        max-height: 230px;
-    }
-}
-
-@media (max-width: 450px) {
-    .explicatif {
-        max-width: 335px; 
-        max-height: 250px; 
-    }
-}
-
-
-
-@media (max-width: 800px) {
+@media (max-width: 1465px) {
     .horaires {
     font-size: medium; /* Réduit la taille de la police pour les petits écrans */
     gap: 10px; /* Réduit l'espace entre les éléments */
@@ -443,14 +454,23 @@ article {
 }
 
 a {
-    color: #F0F0FF;
+    color: white;
 }
 
+@media (max-width: 1465px) {
+    .image-girafes,
+    .image-broceliande {
+        width: 100%;
+        height: 140vh;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+}
 @media (max-width: 800px) {
     .image-girafes,
     .image-broceliande {
         width: 100%;
-        height: 400px;
+        height: 80vh;
         flex-direction: column;
         box-sizing: border-box;
     }
