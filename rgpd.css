@@ -1,14 +1,18 @@
-html {
-    width: 100%;
-    height: 100%;
-    background-color: #9cba92;
+html, body {
+    padding: 0;
+    margin: 10px 8px 10px 10px;
     font-family: Geneva, Tahoma, sans-serif;
 }
 
+body {
+    background-image: url('https://e-solution.timyx.com/wp-reseau/benoit/wp-content/uploads/sites/13/2024/08/fond-feuille.svg');
+    background-size: cover; /* Ajuste l'image pour couvrir tout l'arrière-plan */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed; /* Fixe l'image d'arrière-plan */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+}
+
 #cover {
-    background-image: url(https://i.pinimg.com/736x/da/04/20/da04201444c91750ad22c52e857d5ae8.jpg);
-    background-size: 250%;
-    opacity: 80%;
     width: 200px;
     min-width: 200px;
     height: 150px;
@@ -18,7 +22,7 @@ html {
     justify-content: center;
     margin-right: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.4)); 
 }
 
 .navbar {
