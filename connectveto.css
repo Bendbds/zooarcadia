@@ -11,7 +11,6 @@ body {
     background-attachment: fixed; /* Fixe l'image d'arrière-plan */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
 }
-
 #cover {
     width: 200px;
     min-width: 200px;
@@ -21,8 +20,8 @@ body {
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.4));     
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.4));   
 }
 
 .navbar {
@@ -52,7 +51,7 @@ a:hover {
     border-radius: 10px;
     z-index: 1000;
     background-color: #445843;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
@@ -116,104 +115,52 @@ a:hover {
         }
     }
     
-.avis {
-    font-size: x-large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; 
-    height: 120px; 
-    padding: 20px; 
-    margin: 20px 0 20px 0;
-    border-radius: 10px;
-    background: linear-gradient(to bottom, #445843, #455e3b);
-    color: white;
-    box-sizing: border-box; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 768px) {
-    .avis {
-        font-size: large; 
-        padding: 15px;
-        margin-top: 20px;
+    .container {
+        display:flex;
+        flex-direction: column; /* Change l'alignement en colonne */
+        align-items: center; /* Centre les éléments horizontalement */
+        justify-content: center; /* Centre les éléments verticalement */
+        width: calc(100% - 100px);
+        margin: 20px auto;
+        padding: 50px;
+        background: linear-gradient(to bottom, #445843, #455e3b);
+        color: white;
+        border-radius: 10px;
+        text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     }
-}
 
-@media (max-width: 480px) {
-    .avis {
-        font-size: medium; 
-        padding: 10px; 
+    select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin: 5px; /* Ajoute un petit espace au-dessus des champs */
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     }
-}
 
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:43vh; 
-    margin: 0 0 15px 0; 
-    background: linear-gradient(to bottom, #445843, #455e3b);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-@media (max-width: 800px) {
-    form {
-        height: 300px;   
+    #quantity,
+    #suivi {
+        width: 32vh;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin: 5px; /* Ajoute un petit espace au-dessus des champs */
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     }
-}
-
-@media (max-width: 480px) {
-    form {
-        padding: 5px;
-        justify-content: center;
-        align-items: center;
+    
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        background-color: #5d7854;
+        color: white;
+        cursor: pointer;
+        margin: 15px; /* Espacement au-dessus du bouton */
+        text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     }
-}
-
-label {
-    display: flex;
-    text-align: center;
-    font-style: italic;
-    margin: 10px;
-    color: greenyellow;
-    font-weight: bold;
-}
-
-#pseudo {
-    display: flex;
-    margin: 10px;
-    border-radius: 10px;
-    width: 150px;
-    height: 20px;
-    align-items: center;
-}
-
-#ameliorer {
-    display: flex;
-    width: 1000vh;
-    border-radius: 10px;
-    margin: 10px;
-   
-}
-
-@media (max-width: 800px) {
-    #ameliorer {
-        max-width: 330px;   
-    }
-}
-
- #bouton {
-    display: flex;
-    align-items: right;
-    border-radius: 8px;
-    height: 2em;
-    margin: 5px 0 0 10px;
-    background-color: #85a57a;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
+    
 
 /*Bas de la page */
 .Mentions {
@@ -227,7 +174,7 @@ label {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap; 
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 800px) {
@@ -264,6 +211,7 @@ a {
 }
 
 
+
 /* Styles pour petits écrans */
 @media (max-width: 800px) {
     #imgfooter {
@@ -288,3 +236,4 @@ a {
         clear: none;
     }
 }
+
