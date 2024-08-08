@@ -115,7 +115,8 @@ a:hover {
         }
     }
     
-    .container {
+    .container,
+    h1 {
         display:flex;
         flex-direction: column; /* Change l'alignement en colonne */
         align-items: center; /* Centre les éléments horizontalement */
@@ -130,7 +131,10 @@ a:hover {
         box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     }
 
-    select {
+    #health,
+    #quantity,
+    #checkup_date,
+    #animals {
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 10px;
@@ -139,13 +143,8 @@ a:hover {
     }
 
     #quantity,
-    #suivi {
-        width: 32vh;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        margin: 5px; /* Ajoute un petit espace au-dessus des champs */
-        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    #checkup_date {
+        width: 32vh;  
     }
     
     button {
