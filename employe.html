@@ -30,18 +30,28 @@
     </header>
     <h1> Espace employés - Zoo Arcadia</h1>
     <main>
-        <section id="add-meal">
-            <h2>Ajouter un Repas</h2>
-            <form id="add-meal-form">
-                <label for="animal_id">Animal ID :</label>
-                <input type="number" id="animal_id" required>
-                <label for="food">Nourriture :</label>
-                <input type="text" id="food" required>
-                <label for="meal_time">Date et Heure du Repas :</label>
-                <input type="datetime-local" id="meal_time" required>
-                <button type="submit">Ajouter</button>
-            </form>
-        </section>
+        <div class="container">
+            <label for="animals">Choisissez un animal :</label>
+            <select id="animals">
+                <option value="Pandaroux">Panda Pandaroux</option>
+                <option value="Riri">Girafe Riri</option>
+                <option value="Fifi">Girafe Fifi</option>
+                <option value="Loulou">Girafe Loulou</option>
+                <option value="Tigrou">Tigre Tigrou</option>
+                <option value="Alphonse">Manchot Alphonse</option>
+            </select>
+    
+            
+            <div id="animal-form">
+                <label for="quantity">Quantité de nourriture donnée :</label>
+                <input type="number" id="quantity" placeholder="Entrez la quantité en grammes" />
+    
+                <label for="checkup_date">Date du suivi :</label>
+                <input type="date" id="checkup_date">
+                <button type="button" onclick="submitForm()">Valider</button>
+            </div>
+        </div>
+        
     </main>
     <footer>
         <div id="imgfooter">
