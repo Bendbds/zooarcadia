@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.querySelector('.Menu');
     const headerNav = document.querySelector('.Header');
@@ -6,18 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
     menuButton.addEventListener('click', () => {
         headerNav.classList.toggle('active');
     });
+
     document.getElementById("bouton").addEventListener("click", function() {
-        let mail = document.getElementById("mail").value;
+        let userId = document.getElementById("identifiant").value;
         let motdepasse = document.getElementById("motdepasse").value;
 
+        // Validation regex pour user_id si nécessaire
+        let userIdRegex = /^[a-zA-Z0-9_]{3,}$/;  // Minimum 3 caractères, peut contenir lettres, chiffres, underscore
+        let motdepasseRegex = /^.{8,}$/;  // Minimum 8 caractères
 
-        let mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        let motdepasseRegex = /^.{8,}$/;  // Minimum 8 caracteres
-
-        if (mail === "" || motdepasse === "") {
+        if (userId === "" || motdepasse === "") {
             alert("Tous les champs doivent être remplis.");
-        } else if (!mail.match(mailRegex)) {
-            alert("L'adresse mail n'est pas valide.");
+        } else if (!userId.match(userIdRegex)) {
+            alert("L'identifiant doit contenir au moins 3 caractères, et peut contenir des lettres, chiffres et underscores.");
         } else if (!motdepasse.match(motdepasseRegex)) {
             alert("Le mot de passe doit contenir au moins 8 caractères.");
         } else {

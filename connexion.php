@@ -2,10 +2,10 @@
 session_start();
 
 // Connexion à la base de données
-$servername = "localhost"; // ou votre serveur
-$username = "root"; // ou votre utilisateur MySQL
-$password = "root"; // ou votre mot de passe MySQL
-$dbname = "arcadia"; // nom de votre base de données
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "arcadia1";
 
 // Créer une connexion
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -36,12 +36,15 @@ if ($result->num_rows === 1) {
         $_SESSION['role'] = $user['role'];
         $_SESSION['user_id'] = $user['user_id'];
 
-        // Rediriger vers la page appropriée
+        // Redirection basée sur le rôle
         if ($user['role'] === 'veterinaire') {
-            header('Location: connectveto.html');
+            header('Location: /ZooArcadia/connectveto.html');
+        } elseif ($user['role'] === 'admin') {
+            header('Location: /ZooArcadia/admin.html');
+        } elseif ($user['role'] === 'employe') {
+            header('Location: /ZooArcadia/employe.html');
         } else {
-            // Redirection pour d'autres rôles (par exemple, employé, admin)
-            header('Location: autre_page.html');
+            header('Location: /ZooArcadia/connexion.html');
         }
         exit();
     } else {
@@ -57,6 +60,7 @@ if ($result->num_rows === 1) {
 $conn->close();
 
 // Rediriger vers la page de connexion avec un message d'erreur
-header('Location: connexion.html');
+header('Location: /ZooArcadia/connexion.html');
 exit();
+
 
