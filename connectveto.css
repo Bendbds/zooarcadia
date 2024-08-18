@@ -1,238 +1,45 @@
-html, body {
-    padding: 0;
-    margin: 10px 8px 10px 10px;
-    font-family: Geneva, Tahoma, sans-serif;
-}
 
-body {
-    background-image: url('https://e-solution.timyx.com/wp-reseau/benoit/wp-content/uploads/sites/13/2024/08/fond-feuille.svg');
-    background-size: cover; /* Ajuste l'image pour couvrir tout l'arrière-plan */
-    background-position: center; /* Centre l'image */
-    background-attachment: fixed; /* Fixe l'image d'arrière-plan */
-    background-repeat: no-repeat; /* Empêche la répétition de l'image */
-}
-#cover {
-    width: 200px;
-    min-width: 200px;
-    height: 150px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  
-    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.4));   
-}
-
-.navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.accueil {
-    font-size: x-large;
-    font-weight: bold;
-    color: black;
-}
-
-a:hover {
-    font-style: oblique;
-}
-
-.Header {
-    font-size: x-large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    width: 100%;
-    height: 20vh;
-    border-radius: 10px;
-    z-index: 1000;
-    background-color: #445843;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-
-.Menu {
-    display: none;
-    border-radius: 10px;
-    width: 100px;
-    margin: 20px;
-    background-color: #445843;
-    cursor: pointer;
-    height: 10vh;
-    justify-content: center;
-    align-items: center;
+.container,
+h1 {
+    display:flex;
+    flex-direction: column; /* Change l'alignement en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: center; /* Centre les éléments verticalement */
+    width: calc(100% - 100px);
+    margin: 20px auto;
+    padding: 50px;
+    background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
-    font-size: large;
-    z-index: 1002; 
+    border-radius: 10px;
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 1000px) {
-    .Menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .Header {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 178px; 
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #445843;
-        padding: 20px;
-        z-index: 1000; 
-        align-items: center; 
-        justify-content: flex-start; 
-    }
-
-    .Header.active {
-        display: flex;
-        gap: 0;
-        background-color: #5d7854;
-    }
-
-    .Header a {
-        color: white;
-        margin: 0;
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .Header.active {
-        display: flex;
-        gap: 0;
-        width: auto;
-        }
-    }
-    
-    .container,
-    h1 {
-        display:flex;
-        flex-direction: column; /* Change l'alignement en colonne */
-        align-items: center; /* Centre les éléments horizontalement */
-        justify-content: center; /* Centre les éléments verticalement */
-        width: calc(100% - 100px);
-        margin: 20px auto;
-        padding: 50px;
-        background: linear-gradient(to bottom, #445843, #455e3b);
-        color: white;
-        border-radius: 10px;
-        text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
-        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-    }
-
-    #health,
-    #quantity,
-    #checkup_date,
-    #animals {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        margin: 5px; /* Ajoute un petit espace au-dessus des champs */
-        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-    }
-
-    #quantity,
-    #checkup_date {
-        width: 32vh;  
-    }
-    
-    button {
-        padding: 10px 20px;
-        font-size: 16px;
-        border: none;
-        border-radius: 10px;
-        background-color: #5d7854;
-        color: white;
-        cursor: pointer;
-        margin: 15px; /* Espacement au-dessus du bouton */
-        text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
-        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-    }
-    
-
-/*Bas de la page */
-.Mentions {
-    font-size: x-large;
-    gap: 40px;
-    width:auto;
-    height: 170px;
+#health,
+#quantity,
+#checkup_date,
+#animals {
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    background-color: #445843;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap; 
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 800px) {
-    .Mentions {
-        font-size: medium; /* Réduit la taille de la police pour les petits écrans */
-        gap: 10px; /* Réduit l'espace entre les éléments */
-        flex-direction: column;
-    }
-}
-
-a {
-    color: #F0F0FF;
-}
-
-.imgbasg,
-.imgbasd {
-    max-width: 16em; /* Conserver la largeur maximale */
-    width: calc(100% - 10px); /* Ajuster pour les marges */
-    height: 170px;
-    margin: 0px 0px 5px 0px; /* Réduire les marges latérales et ajuster les autres marges */
-    float: left;
-    clear: left;
-    border-radius: 10px;
+    margin: 5px; /* Ajoute un petit espace au-dessus des champs */
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.imgbasd {
-    float: right;
-    clear: right;
-    margin-left: 5px;
+#quantity,
+#checkup_date {
+    width: 32vh;  
 }
-.imgbasg {
-    margin-right: 5px;
+    
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #5d7854;
+    color: white;
+    cursor: pointer;
+    margin: 15px; /* Espacement au-dessus du bouton */
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
-
-
-
-/* Styles pour petits écrans */
-@media (max-width: 800px) {
-    #imgfooter {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        max-width: 100%;
-        min-width: 100%;
-        height: auto;
-        margin: 0 0;
-        float: none;
-        clear: none;
-    }
-    .imgbasd,
-    .imgbasg {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        margin: 15px 0;
-        float: none;
-        clear: none;
-    }
-}
-
