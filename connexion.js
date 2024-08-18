@@ -6,22 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
         headerNav.classList.toggle('active');
     });
 
-    document.getElementById("bouton").addEventListener("click", function() {
-        let userId = document.getElementById("identifiant").value;
-        let motdepasse = document.getElementById("motdepasse").value;
+    // document.querySelector('form').addEventListener("submit", function() {
+    //     const userId = document.getElementById("identifiant").value.trim();
+    //     const motdepasse = document.getElementById("motdepasse").value.trim();
 
-        // Validation regex pour user_id si nécessaire
-        let userIdRegex = /^[a-zA-Z0-9_]{3,}$/;  // Minimum 3 caractères, peut contenir lettres, chiffres, underscore
-        let motdepasseRegex = /^.{8,}$/;  // Minimum 8 caractères
+    //     // Validation regex pour user_id si nécessaire
+    //     const userIdRegex = /^[a-zA-Z0-9_]{3,}$/;  // Minimum 3 caractères, peut contenir lettres, chiffres, underscore
+    //     const motdepasseRegex = /^.{8,}$/;  // Minimum 8 caractères
 
-        if (userId === "" || motdepasse === "") {
-            alert("Tous les champs doivent être remplis.");
-        } else if (!userId.match(userIdRegex)) {
-            alert("L'identifiant doit contenir au moins 3 caractères, et peut contenir des lettres, chiffres et underscores.");
-        } else if (!motdepasse.match(motdepasseRegex)) {
-            alert("Le mot de passe doit contenir au moins 8 caractères.");
-        } else {
-            document.getElementById("formulaire").submit();
-        }
-    });
+    //     let error = null;
+
+    //     if (userId === "" || motdepasse === "") {
+    //         error = "Tous les champs doivent être remplis.";
+    //     } else if (!userId.match(userIdRegex)) {
+    //         error = "L'identifiant doit contenir au moins 3 caractères, et peut contenir des lettres, chiffres et underscores.";
+    //     } else if (!motdepasse.match(motdepasseRegex)) {
+    //         error = "Le mot de passe doit contenir au moins 8 caractères.";
+    //     }
+
+    //     if (error !== null) {
+    //         alert(error);
+    //         return false;
+    //     }
+    // });
 });
