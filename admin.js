@@ -1,43 +1,33 @@
-// admin.js
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('.Menu');
+    const headerNav = document.querySelector('.Header');
 
-document.getElementById('add-animal-form').addEventListener('submit', async function(event) {
-    event.preventDefault();
-    
-    const name_species = document.getElementById('name_species').value;
-    const health_status = document.getElementById('health_status').value;
-    const checkup_date = document.getElementById('checkup_date').value;
-    
-    const response = await fetch('/.netlify/functions/admin', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            action: 'add-animal',
-            name_species,
-            health_status,
-            checkup_date
-        })
+    menuButton.addEventListener('click', () => {
+        headerNav.classList.toggle('active');
     });
-    
-    const result = await response.json();
-    alert(result.message);
 });
 
-document.getElementById('manage-users-form').addEventListener('submit', async function(event) {
-    event.preventDefault();
-    
-    const username = document.getElementById('username').value;
-    const role = document.getElementById('role').value;
-    
-    const response = await fetch('/.netlify/functions/admin', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            action: 'manage-users',
-            username,
-            role
-        })
-    });
-    
-    const result = await response.json();
-    alert(result.message);
+document.addEventListener('DOMContentLoaded', () => {
+    const displayElement = document.getElementById('clics-display');
+
+    // Liste des habitats que vous avez sur votre page habitats.html
+    const habitats = [
+        'foret',
+        'savane',
+        'foret-montagneuse',
+        'antarctique'
+    ];
+
+    // Fonction pour mettre à jour l'affichage des clics
+    const updateDisplay = () => {
+        const html = habitats.map(habitat => {
+            const count = localStorage.getItem(`count_${habitat}`) || 0;
+            return `<p>La ${habitat.replace('-', ' ')} a été cliquée ${count} fois</p>`;
+        }).join('');
+        
+        displayElement.innerHTML = html;
+    };
+
+    // Initialisation de l'affichage
+    updateDisplay();
 });

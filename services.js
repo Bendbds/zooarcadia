@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.querySelector('.Menu');
     const headerNav = document.querySelector('.Header');
@@ -6,8 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     menuButton.addEventListener('click', () => {
         headerNav.classList.toggle('active');
     });
+});
 
-    const cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.card');
 
     cards.forEach(card => {
         card.addEventListener('touchstart', function () {
@@ -21,5 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
             cards.forEach(card => card.classList.remove('active')); // Retirer la classe active si on touche en dehors d'une carte
         }
     });
-});
+
 

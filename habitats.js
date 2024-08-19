@@ -1,3 +1,13 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('.Menu');
+    const headerNav = document.querySelector('.Header');
+
+    menuButton.addEventListener('click', () => {
+        headerNav.classList.toggle('active');
+    });
+});
+
 document.querySelector('.foret').addEventListener('click', function() {
     const liste = document.querySelector('.liste-cachee');
     liste.classList.toggle('liste-visible');
@@ -17,14 +27,7 @@ document.querySelector('.antarctique').addEventListener('click', function() {
     const liste = document.querySelector('.liste-cachee-quatre');
     liste.classList.toggle('liste-visible-quatre');
 });
-document.addEventListener('DOMContentLoaded', () => {
-    const menuButton = document.querySelector('.Menu');
-    const headerNav = document.querySelector('.Header');
 
-    menuButton.addEventListener('click', () => {
-        headerNav.classList.toggle('active');
-    });
-});
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('button.foret, button.savane, button.foret-montagneuse, button.antarctique');
     buttons.forEach(button => {
@@ -32,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const buttonClass = event.target.className;
             const countKey = `count_${buttonClass}`;
 
-          
             let count = localStorage.getItem(countKey);
             if (!count) {
                 count = 0;
@@ -40,11 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             count = parseInt(count) + 1;
 
-           
             localStorage.setItem(countKey, count);
-
-           
-            console.log(`l'habitat ${buttonClass} a été cliqué ${count} fois`);
+            console.log(`L'habitat ${buttonClass} a été cliqué ${count} fois`);
         });
     });
 });

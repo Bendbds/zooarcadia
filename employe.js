@@ -1,4 +1,11 @@
-// employe.js
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('.Menu');
+    const headerNav = document.querySelector('.Header');
+
+    menuButton.addEventListener('click', () => {
+        headerNav.classList.toggle('active');
+    });
+});
 
 document.getElementById('add-meal-form').addEventListener('submit', async function(event) {
     event.preventDefault();

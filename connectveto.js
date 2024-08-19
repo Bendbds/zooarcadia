@@ -1,4 +1,12 @@
 // veterinaire.js
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('.Menu');
+    const headerNav = document.querySelector('.Header');
+
+    menuButton.addEventListener('click', () => {
+        headerNav.classList.toggle('active');
+    });
+});
 
 document.getElementById('add-animal-form').addEventListener('submit', async function(event) {
     event.preventDefault();

@@ -1,10 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuButton = document.querySelector('.Menu');
-    const headerNav = document.querySelector('.Header');
-
-    menuButton.addEventListener('click', () => {
-        headerNav.classList.toggle('active');
-    });
 
     // document.querySelector('form').addEventListener("submit", function() {
     //     const userId = document.getElementById("identifiant").value.trim();
@@ -29,4 +22,4 @@ document.addEventListener('DOMContentLoaded', () => {
     //         return false;
     //     }
     // });
-});
+
