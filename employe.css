@@ -1,3 +1,9 @@
+@media (max-width: 1100px) {
+    .Header.active {
+    font-size: 1.3em;
+    }
+}
+
 .container,
 h1 {
     display: flex;

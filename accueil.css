@@ -295,3 +295,36 @@ article {
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
 }
 
+@media (max-width: 1465px) {
+    .horaires {
+    font-size: medium; /* Réduit la taille de la police pour les petits écrans */
+    gap: 10px; /* Réduit l'espace entre les éléments */
+    flex-direction: column;
+    width: 100%;
+    max-height: 350px;
+    margin-bottom: 20px;
+    }
+}
+
+a {
+    color: white;
+}
+
+@media (max-width: 1465px) {
+    .image-girafes,
+    .image-broceliande {
+        width: 100%;
+        height: 140vh;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+}
+@media (max-width: 800px) {
+    .image-girafes,
+    .image-broceliande {
+        width: 100%;
+        height: 80vh;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+}

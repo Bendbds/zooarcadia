@@ -16,28 +16,6 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
         box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     }
-    
-    @media (max-width: 1060px) {
-        .connexionemploye {
-            font-size: medium; 
-            flex-direction: column;
-            text-align: center;
-        }
-    }
-        @media (max-width: 1060px) {
-        #formulaire {
-            font-size: medium; 
-            flex-direction: column;
-            height: 200px;
-        }
-    }
-    @media (min-width: 1060px) {
-        label,
-        #bouton {
-            margin-left: 20px;
-            margin-left: 20px;
-        }
-    } 
 
 label {
     display: block;
@@ -69,4 +47,34 @@ label {
     flex-wrap: wrap; 
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
  }
+    
+ @media (max-width: 1060px) {
+    .connexionemploye {
+        font-size: medium; 
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media (max-width: 1060px) {
+    #formulaire,
+    label {
+        text-align: center;
+        flex-direction: column;
+        height: 200px;
+    }
 
+    /* Assurez-vous que le label et l'input sont dans une direction colonne */
+    label {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Aligne les éléments au centre horizontalement */
+    }
+}
+
+@media (min-width: 1060px) {
+    label,
+    #bouton {
+        margin-left: 20px;
+        margin-left: 20px;
+    }
+} 

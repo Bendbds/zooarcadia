@@ -204,3 +204,12 @@
     height: 70vh;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
+
+@media (max-width: 800px) {
+    .tigrou,
+    .girafes,
+    .pandaroux,
+    .manchot {
+        height: 35vh;
+    }
+}

@@ -1,3 +1,9 @@
+@media (max-width: 1100px) {
+    .Header.active {
+    font-size: 1.3em;
+    }
+}
+
 .container{
     display:flex;
     flex-direction: column; /* Change l'alignement en colonne */
@@ -14,6 +20,7 @@
 }
 
 #add-animal,
+#animal_form,
 h1,
 #manage-users{
     display:flex;
@@ -63,4 +70,26 @@ button {
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
-    
+/* style.css */
+#habitats {
+    display: flex;
+    flex-direction: column; /* Change l'alignement en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: center; /* Centre les éléments verticalement */
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    color: #000000; /* Texte blanc pour le contraste avec le fond */
+    width: 300px; /* Largeur fixe pour une meilleure apparence */
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+
+.option-clicks {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #fff; /* Texte blanc pour le contraste avec le fond vert */
+}

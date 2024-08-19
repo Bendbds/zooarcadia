@@ -1,7 +1,13 @@
+@media (max-width: 1100px) {
+    .Header.active {
+    font-size: 1.3em;
+    }
+}
 
 .container,
 h1 {
     display:flex;
+    text-align: center;
     flex-direction: column; /* Change l'alignement en colonne */
     align-items: center; /* Centre les éléments horizontalement */
     justify-content: center; /* Centre les éléments verticalement */
