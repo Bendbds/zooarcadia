@@ -9,7 +9,7 @@ checkAccess();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/employe.css">
     <script defer src="js/employe.js"></script>
     <title>Employé - Gestion des Repas</title>
@@ -39,25 +39,25 @@ checkAccess();
     <h1> Espace employés - Zoo Arcadia</h1>
     <main>
         <div class="container">
-            <label for="animals">Choisissez un animal :</label>
-            <select id="animals">
-                <option value="Pandaroux">Panda Pandaroux</option>
+            <form id="add-animal-form" action="enregistrer_nourriture.php" method="POST">
+    <label for="animals">Choisissez un animal :</label>
+    <select name="animal_id" id="animals">
+    <option value="Pandaroux">Panda Pandaroux</option>
                 <option value="Riri">Girafe Riri</option>
                 <option value="Fifi">Girafe Fifi</option>
                 <option value="Loulou">Girafe Loulou</option>
                 <option value="Tigrou">Tigre Tigrou</option>
                 <option value="Alphonse">Manchot Alphonse</option>
-            </select>
-    
-            
-            <div id="animal-form">
-                <label for="quantity">Quantité de nourriture donnée :</label>
-                <input type="number" id="quantity" placeholder="Entrez la quantité en grammes" />
-    
-                <label for="checkup_date">Date du suivi :</label>
-                <input type="date" id="checkup_date">
-                <button type="button" onclick="submitForm()">Valider</button>
-            </div>
+    </select>
+
+    <label for="quantity">Quantité de nourriture donnée :</label>
+    <input type="number" name="quantity" id="quantity" placeholder="Entrez la quantité en grammes" required />
+
+    <label for="checkup_date">Date du suivi :</label>
+    <input type="date" name="checkup_date" id="checkup_date" required />
+
+    <button type="submit">Ajouter</button>
+</form>
         </div>
         
     </main>

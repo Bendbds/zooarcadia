@@ -79,7 +79,6 @@ checkAccess();
     
                 <label for="checkup_date">Date du suivi :</label>
                 <input type="date" id="checkup_date">
-                <button type="submit">Ajouter</button>
     
                 <label for="health">État de santé :</label>
                 <select id="health">
@@ -109,6 +108,17 @@ checkAccess();
                 <button type="submit">Mettre à jour</button>
             </form>
         </section>
+        <div class="container">
+            <label for="habitats">Suivi des habitats :</label>
+            <select id="habitats">
+            <option value="forêt tropicale">La forêt tropicale</option>
+                <option value="savane Africaine">La savane Africaine</option>
+                <option value="forêt montagneuse">La forêt montagneuse</option>
+                <option value="continent Antartique">Le continent Antartique</option>
+            </select>
+            <div id="clics-display">
+        
+    </div>
     </main>
 <footer>
     <div id="imgfooter">
@@ -124,5 +134,3 @@ checkAccess();
 
 </body>
 </html>
-
-
