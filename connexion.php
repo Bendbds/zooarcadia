@@ -1,8 +1,6 @@
 <?php
 
-require_once('libs/config.php');
-
-session_start();
+require_once('libs/global.php');
 
 // Créer une connexion
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);

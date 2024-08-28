@@ -8,14 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("bouton").addEventListener("click", function() {
+    document.getElementById("bouton").addEventListener("click", function(event) {
+        event.preventDefault();
+
         let nom = document.getElementById("nom").value;
         let mail = document.getElementById("mail").value;
         let ameliorer = document.getElementById("ameliorer").value;
 
         let nomRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s'-]{1,30}$/;
         let mailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        let ameliorerRegex = /^.{10,}$/;  // Minimum 10 caracteres
+        let ameliorerRegex = /^.{10,}$/;  // Minimum 10 caractères
 
         if (nom === "" || mail === "" || ameliorer === "") {
             alert("Tous les champs doivent être remplis.");
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (!mail.match(mailRegex)) {
             alert("L'adresse mail n'est pas valide.");
         } else if (!ameliorer.match(ameliorerRegex)) {
-            alert("Le commentaire doit contenir au moins 10 caractères.");
+            alert("Le message doit contenir au moins 10 caractères.");
         } else {
             document.getElementById("formulaire").submit();
         }
