@@ -6,44 +6,35 @@ document.addEventListener('DOMContentLoaded', () => {
     menuButton.addEventListener('click', () => {
         headerNav.classList.toggle('active');
     });
-});
 
-document.querySelector('.foret').addEventListener('click', function() {
-    const liste = document.querySelector('.liste-cachee');
-    liste.classList.toggle('liste-visible');
-});
+    const toggleButton = document.getElementById('toggleButton');
+    const form = document.getElementById('habitatForm');
+    const listeCachee = form.querySelector('.liste-cachee');
 
-document.querySelector('.savane').addEventListener('click', function() {
-    const liste = document.querySelector('.liste-cachee-deux');
-    liste.classList.toggle('liste-visible-deux');
-});
-
-document.querySelector('.foret-montagneuse').addEventListener('click', function() {
-    const liste = document.querySelector('.liste-cachee-trois');
-    liste.classList.toggle('liste-visible-trois');
-});
-
-document.querySelector('.antarctique').addEventListener('click', function() {
-    const liste = document.querySelector('.liste-cachee-quatre');
-    liste.classList.toggle('liste-visible-quatre');
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('button.foret, button.savane, button.foret-montagneuse, button.antarctique');
-    buttons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const buttonClass = event.target.className;
-            const countKey = `count_${buttonClass}`;
-
-            let count = localStorage.getItem(countKey);
-            if (!count) {
-                count = 0;
-            }
-
-            count = parseInt(count) + 1;
-
-            localStorage.setItem(countKey, count);
-            console.log(`L'habitat ${buttonClass} a été cliqué ${count} fois`);
-        });
+    // Affiche ou cache la liste cachée au clic
+    toggleButton.addEventListener('click', () => {
+        listeCachee.classList.toggle('liste-visible');
+        // Optionnel : Soumettre le formulaire après un court délai pour permettre l'affichage
+        setTimeout(() => {
+            form.submit();
+        }, 1);
+    });
+    
+    document.querySelector('.savane').addEventListener('click', function() {
+        const liste = document.querySelector('.liste-cachee-deux');
+        liste.classList.toggle('liste-visible-deux');
+        enregistrerClic('savane');
+    });
+    
+    document.querySelector('.foret-montagneuse').addEventListener('click', function() {
+        const liste = document.querySelector('.liste-cachee-trois');
+        liste.classList.toggle('liste-visible-trois');
+        enregistrerClic('foret-montagneuse');
+    });
+    
+    document.querySelector('.antarctique').addEventListener('click', function() {
+        const liste = document.querySelector('.liste-cachee-quatre');
+        liste.classList.toggle('liste-visible-quatre');
+        enregistrerClic('antarctique');
     });
 });
