@@ -1,18 +1,10 @@
-@media (max-width: 1100px) {
-    .Header.active {
-    font-size: 1.3em;
-    }
-}
-
 .container,
 h1 {
     display: flex;
     flex-direction: column;
-    /* Change l'alignement en colonne */
+    text-align: center;
     align-items: center;
-    /* Centre les éléments horizontalement */
     justify-content: center;
-    /* Centre les éléments verticalement */
     width: calc(100% - 100px);
     margin: 20px auto;
     padding: 50px;
@@ -29,8 +21,8 @@ h1 {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    text-align: center;
     margin: 5px;
-    /* Ajoute un petit espace au-dessus des champs */
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
@@ -40,6 +32,8 @@ h1 {
 }
 
 button {
+    display: inline-block;
+    margin: 15px auto;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -47,8 +41,16 @@ button {
     background-color: #5d7854;
     color: white;
     cursor: pointer;
-    margin: 15px;
-    /* Espacement au-dessus du bouton */
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 1100px) {
+    .Header.active {
+        font-size: 1.3em;
+    }
 }

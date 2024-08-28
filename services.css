@@ -29,7 +29,7 @@
     background: linear-gradient(to bottom, #445843, #455e3b);
     color: whitesmoke;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .container {
@@ -38,25 +38,29 @@
     height: 400px;
     display: flex;
     gap: 10px;
-    margin: 50px auto; /* Centrer le conteneur horizontalement */
+    margin: 50px auto;
+    /* Centrer le conteneur horizontalement */
     padding: 0 10px;
 }
 
 .card {
-    flex: 1; /* Rend toutes les cartes de taille égale initialement */
+    flex: 1;
+    /* Rend toutes les cartes de taille égale initialement */
     min-width: 50px;
     height: 100%;
     border-radius: 10px;
     display: flex;
     align-items: flex-end;
     position: relative;
-    overflow: hidden; 
-    transition: flex 0.5s ease; /* Transition sur la flexibilité */
+    overflow: hidden;
+    transition: flex 0.5s ease;
+    /* Transition sur la flexibilité */
 }
 
 .card:hover,
 .card.active {
-    flex: 7; /* Agrandir la carte survolée ou active */
+    flex: 7;
+    /* Agrandir la carte survolée ou active */
 }
 
 .card-content {
@@ -65,7 +69,7 @@
     padding: 20px;
 }
 
-.card-content > .title {
+.card-content>.title {
     margin-left: 10px;
     transform: translateY(100%);
     opacity: 0;
@@ -76,7 +80,7 @@
 .card.active .title {
     opacity: 1;
     transform: translateY(0);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .background {
@@ -97,11 +101,18 @@
 }
 
 @media (max-width: 480px) {
+
     .titre-services,
     .menu-restauration,
     .activites {
-        font-size: 0.8em; /* Réduit la taille de la police pour les petits écrans */
+        font-size: 0.7em;
+        /* Réduit la taille de la police pour les petits écrans */
         margin: 20px 0 20px 0;
-        width:100%;
+        width: 100%;
+    }
+
+    .card:hover .title,
+    .card.active .title {
+        font-size: x-small;
     }
 }

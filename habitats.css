@@ -27,7 +27,7 @@
     font-size: 2em;
     text-align: center;
     margin: 20px auto 10px 0;
-    padding: 0 5px 0 5px;
+    padding: 0 20px 0 20px;
     border-radius: 10px;
     background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
@@ -210,6 +210,9 @@
     .girafes,
     .pandaroux,
     .manchot {
-        height: 35vh;
+        height: 34vh;
+    }
+    .explicatif{
+        font-size: x-large;
     }
 }

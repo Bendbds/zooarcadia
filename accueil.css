@@ -1,7 +1,7 @@
 .image-panda {
     width: 100%;
     height: auto;
-    border-radius:10px;
+    border-radius: 10px;
     margin: 20px 0 0;
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
@@ -15,36 +15,65 @@
     color: white;
     position: absolute;
     padding: 50px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);  
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permet aux éléments de s'ajuster si nécessaire */
+    justify-content: space-between;
+    /* Assure que les éléments sont bien espacés */
 }
 
 .explicatif {
+    width: 49.3%;
+    /* Ajuste légèrement pour laisser un espace entre les éléments */
+    box-sizing: border-box;
+    /* Inclut le padding et la bordure dans la largeur totale */
     font-size: xx-large;
     text-align: center;
-    width: 46.7%;
-    height: 500px;
-    margin: 20px auto 10px 0;
     padding: 20px;
-    border-radius:10px;
+    border-radius: 10px;
     background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
-    display: flex;
-    align-items: center;
-    float: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    /* Réglage de la hauteur automatique pour s'adapter au contenu */
+    height: 540px;
+    margin: 20px 0 20px 0;
 }
+
+.image-container {
+    width: 49.7%;
+    /* Ajuste légèrement pour laisser un espace entre les éléments */
+    box-sizing: border-box;
+    /* Inclut le padding et la bordure dans la largeur totale */
+}
+
+.image-girafes {
+    width: 100%;
+    /* L'image prend 100% de la largeur de son conteneur */
+    height: 540px;
+    /* Maintient les proportions de l'image */
+    border-radius: 10px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    margin: 20px 0 20px 0;
+}
+
 
 @media (max-width: 1200px) {
     .text-panda {
-        font-size: large; /* Réduit la taille de la police pour les petits écrans */   
+        font-size: large;
+        /* Réduit la taille de la police pour les petits écrans */
     }
 }
 
 @media (max-width: 800px) {
     .text-panda {
         top: 135px;
-        font-size: small; /* Réduit la taille de la police pour les petits écrans */
+        font-size: small;
+        /* Réduit la taille de la police pour les petits écrans */
     }
 }
 
@@ -56,7 +85,6 @@
         width: 60%;
         height: auto;
         margin: 10px auto;
-        float: none;
     }
 }
 
@@ -66,7 +94,6 @@
         width: 80%;
         height: auto;
         margin: 10px auto;
-        float: none;
     }
 }
 
@@ -77,26 +104,14 @@
         height: auto;
         margin: 10px auto 0 auto;
         padding: 10px;
-        float: none;
     }
-}
-
-
-.image-girafes {
-    width: 49.75%;
-    margin: 20px 0 20px 10px;
-    height: 540px;
-    border-radius:10px;
-    display: flex;
-    float: right;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 .image-broceliande {
     width: 49.3%;
     margin: 0px 10px 20px 0;
     height: 540px;
-    border-radius:10px;
+    border-radius: 10px;
     display: flex;
     float: left;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
@@ -107,13 +122,13 @@
     padding: 0;
     background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
-    border-radius:10px;
+    border-radius: 10px;
     float: right;
     width: 49.7%;
     height: 540px;
     font-size: xx-large;
     margin: 0 0 10px 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
@@ -124,8 +139,8 @@
     padding: 15px;
     font-size: 1.5em;
     font-weight: bold;
-    border-radius:10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
@@ -154,44 +169,47 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 100%; 
-    height: auto; 
-    padding: 20px; 
+    width: 100%;
+    height: auto;
+    padding: 20px;
     margin: 0 10px 20px 0;
-    border-radius:10px;
+    border-radius: 10px;
     background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
-    box-sizing: border-box; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    box-sizing: border-box;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 768px) {
     .avis {
-        font-size: large; 
-        padding: 15px; 
+        font-size: large;
+        padding: 15px;
         margin-top: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .avis {
-        font-size: medium; 
-        padding: 10px; 
+        font-size: medium;
+        padding: 10px;
     }
 }
 
 @media (max-width: 1200px) {
     .articles-container {
-        font-size: small; /* Réduit la taille de la police pour les petits écrans */
-        gap: 10px; /* Réduit l'espace entre les éléments */
+        font-size: small;
+        /* Réduit la taille de la police pour les petits écrans */
+        gap: 10px;
+        /* Réduit l'espace entre les éléments */
         flex-direction: column;
     }
 }
+
 h4 {
     color: white;
     text-decoration: underline;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .articles-container {
@@ -206,12 +224,12 @@ article {
     height: 300px;
     padding: 20px;
     box-sizing: border-box;
-    border-radius:10px;
+    border-radius: 10px;
     text-align: center;
     color: white;
     align-items: center;
     font-size: 22px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
@@ -232,32 +250,37 @@ article {
 }
 
 .service-item .description {
-    width: 100%; /* La description prendra 100% de la largeur de .service-item */
-    margin-top: 10px; /* Marge top pour l'espace entre l'image et la description */
+    width: 100%;
+    /* La description prendra 100% de la largeur de .service-item */
+    margin-top: 10px;
+    /* Marge top pour l'espace entre l'image et la description */
 }
 
 .service-item img {
     max-width: 100%;
     height: auto;
-    border-radius:10px;
-    object-fit: cover; /* Important pour conserver les proportions */
+    border-radius: 10px;
+    object-fit: cover;
+    /* Important pour conserver les proportions */
     width: 100%;
-    height: 500px; /* Hauteur fixe pour toutes les images */
+    height: 500px;
+    /* Hauteur fixe pour toutes les images */
 }
 
-.description { /*texte train et restau*/
+.description {
+    /*texte train et restau*/
     display: flex;
-    margin-top: 10px; 
-    font-size: 2rem; 
+    margin-top: 10px;
+    font-size: 2rem;
     background: linear-gradient(to bottom, #445843, #455e3b);
-    border-radius:10px;
+    border-radius: 10px;
     height: 2em;
     text-align: center;
     justify-content: center;
     align-items: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-   
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
 }
 
 /* Média queries pour des tailles d'écran spécifiques */
@@ -269,40 +292,44 @@ article {
 
     .description {
         font-size: 1em;
-        
+
     }
 }
 
-.image-train, .image-restauration {
-    height: 30em; 
-    border-radius:10px;
+.image-train,
+.image-restauration {
+    height: 30em;
+    border-radius: 10px;
     max-width: 100%;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.description { /*texte train et restau*/
+.description {
+    /*texte train et restau*/
     display: flex;
-    margin-top: 10px; 
-    font-size: 2rem; 
+    margin-top: 10px;
+    font-size: 2rem;
     background: linear-gradient(to bottom, #445843, #455e3b);
-    border-radius:10px;
+    border-radius: 10px;
     height: 4em;
     text-align: center;
     justify-content: center;
     align-items: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 1465px) {
     .horaires {
-    font-size: medium; /* Réduit la taille de la police pour les petits écrans */
-    gap: 10px; /* Réduit l'espace entre les éléments */
-    flex-direction: column;
-    width: 100%;
-    max-height: 350px;
-    margin-bottom: 20px;
+        font-size: medium;
+        /* Réduit la taille de la police pour les petits écrans */
+        gap: 10px;
+        /* Réduit l'espace entre les éléments */
+        flex-direction: column;
+        width: 100%;
+        max-height: 350px;
+        margin-bottom: 20px;
     }
 }
 
@@ -311,20 +338,22 @@ a {
 }
 
 @media (max-width: 1465px) {
-    .image-girafes,
+
     .image-broceliande {
         width: 100%;
         height: 140vh;
-        flex-direction: column;
-        box-sizing: border-box;
+    }
+
+    .image-girafes {
+        width: 200%;
+        height: 140vh;
     }
 }
+
 @media (max-width: 800px) {
+
     .image-girafes,
     .image-broceliande {
-        width: 100%;
         height: 80vh;
-        flex-direction: column;
-        box-sizing: border-box;
     }
 }

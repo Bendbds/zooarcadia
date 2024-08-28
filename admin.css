@@ -1,64 +1,72 @@
-@media (max-width: 1100px) {
-    .Header.active {
-    font-size: 1.3em;
-    }
-}
-
-.container{
-    display:flex;
-    flex-direction: column; /* Change l'alignement en colonne */
-    align-items: center; /* Centre les éléments horizontalement */
-    justify-content: center; /* Centre les éléments verticalement */
+/* Styles généraux pour .container et h1 */
+.container,
+h1 {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    /* Aligne les éléments en colonne */
+    align-items: center;
+    /* Centre les éléments horizontalement */
+    justify-content: center;
+    /* Centre les éléments verticalement */
     width: calc(100% - 100px);
+    /* Réduit la largeur pour inclure les marges */
     margin: 20px auto;
+    /* Centre horizontalement */
     padding: 50px;
     background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
     border-radius: 10px;
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-#add-animal,
-#animal_form,
-h1,
-#manage-users{
-    display:flex;
-    flex-direction: column; /* Change l'alignement en colonne */
-    align-items: center; /* Centre les éléments horizontalement */
-    justify-content: center; /* Centre les éléments verticalement */
-    width: calc(100% - 100px);
-    margin: 20px auto;
-    padding: 50px;
-    background: linear-gradient(to bottom, #445843, #455e3b);
-    color: white;
-    border-radius: 10px;
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+/* Styles pour le formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    /* Dispose les éléments du formulaire en colonne */
+    gap: 20px;
+    /* Espacement entre les groupes de formulaire */
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    /* Limite la largeur du formulaire */
+    box-sizing: border-box;
+    /* Inclut le padding et la bordure dans la largeur totale */
 }
 
+/* Styles pour chaque groupe de formulaire */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    /* Aligne les éléments du groupe en colonne */
+    gap: 10px;
+    /* Espacement entre le label et l'élément de formulaire */
+}
+
+/* Styles pour les labels */
+label {
+    font-weight: bold;
+    text-align: left;
+    /* Aligne le texte du label à gauche */
+}
+
+/* Styles pour les éléments de formulaire */
+input,
 select {
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 10px;
-    margin: 5px; /* Ajoute un petit espace au-dessus des champs */
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    /* Inclut le padding et la bordure dans la largeur totale */
 }
 
-#quantity,
-#suivi,
-#name_species,
-#username,
-#checkup_date {
-    width: 32vh;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin: 5px; /* Ajoute un petit espace au-dessus des champs */
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-    
+/* Styles pour le bouton */
 button {
+    display: block;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -66,30 +74,49 @@ button {
     background-color: #5d7854;
     color: white;
     cursor: pointer;
-    margin: 15px; /* Espacement au-dessus du bouton */
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
+    margin: 15px auto;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-/* style.css */
-#habitats {
-    display: flex;
-    flex-direction: column; /* Change l'alignement en colonne */
-    align-items: center; /* Centre les éléments horizontalement */
-    justify-content: center; /* Centre les éléments verticalement */
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-    color: #000000; /* Texte blanc pour le contraste avec le fond */
-    width: 300px; /* Largeur fixe pour une meilleure apparence */
-    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3); 
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    /* Prend toute la largeur disponible */
+    max-width: 200px;
+    /* Largeur maximale pour le bouton */
 }
 
+/* Styles spécifiques pour textarea */
+textarea {
+    width: 100%;
+    max-width: 1000px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
 
+/* Media Queries pour la réactivité */
+@media (max-width: 1290px) {
+    .form-group {
+        align-items: flex-start;
+    }
 
-.option-clicks {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    color: #fff; /* Texte blanc pour le contraste avec le fond vert */
+    label {
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    input,
+    select {
+        width: 100%;
+    }
+
+    textarea {
+        width: 125%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .Header.active {
+        font-size: 1.3em;
+    }
 }
