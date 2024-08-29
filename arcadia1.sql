@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 15 août 2024 à 21:48
+-- Généré le : jeu. 29 août 2024 à 15:59
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -24,54 +24,141 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `animals`
+-- Structure de la table `animal_data`
 --
 
-CREATE TABLE `animals` (
-  `animal_id` int(11) NOT NULL,
-  `name_species` varchar(50) NOT NULL,
-  `health_status` varchar(100) DEFAULT NULL,
-  `checkup_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `animals`
---
-
-INSERT INTO `animals` (`animal_id`, `name_species`, `health_status`, `checkup_date`) VALUES
-(1, 'Tigre Tigrou', 'Excellent', NULL),
-(2, 'Girafe Riri', 'Bon', NULL),
-(3, 'Girafe Fifi', 'Moyen', NULL),
-(4, 'Girafe Loulou', 'Très Bon', NULL),
-(5, 'Manchot Alphonse', 'À soigner', NULL),
-(6, 'Panda Pandaroux', 'Excellent', NULL);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `health`
---
-
-CREATE TABLE `health` (
-  `record_id` int(11) NOT NULL,
-  `animal_id` int(11) DEFAULT NULL,
+CREATE TABLE `animal_data` (
+  `id` int(11) NOT NULL,
+  `animal` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
   `checkup_date` date NOT NULL,
-  `health` enum('À soigner','Moyen','Bon','Très Bon','Excellent') NOT NULL,
-  `veterinaire_id` int(11) DEFAULT NULL
+  `health` text NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `animal_data`
+--
+
+INSERT INTO `animal_data` (`id`, `animal`, `quantity`, `checkup_date`, `health`, `user_id`) VALUES
+(1, 'Tigrou', 1230, '2024-08-22', '', 2),
+(2, 'Pandaroux', 100, '2024-08-07', '', 2),
+(3, 'Tigrou', 450, '2024-08-22', 'excellent', 3),
+(4, 'Fifi', 1005, '2024-08-21', 'bon', 1),
+(5, 'Fifi', 1005, '2024-08-21', 'bon', 1),
+(6, 'Fifi', 1005, '2024-08-21', 'bon', 1),
+(7, 'Fifi', 1005, '2024-08-21', 'bon', 1),
+(8, 'Fifi', 1005, '2024-08-21', 'bon', 1),
+(9, 'Fifi', 1005, '2024-08-21', 'bon', 1),
+(10, 'Alphonse', 852, '2024-08-15', 'moyen', 1),
+(11, 'Alphonse', 852, '2024-08-15', 'moyen', 1),
+(12, 'Alphonse', 852, '2024-08-15', 'moyen', 1),
+(13, 'Alphonse', 852, '2024-08-15', 'moyen', 1),
+(14, 'Alphonse', 852, '2024-08-15', 'moyen', 1),
+(15, 'Alphonse', 852, '2024-08-15', 'moyen', 1),
+(16, 'Loulou', 789456, '2024-08-23', 'bon', 1),
+(17, 'Loulou', 789456, '2024-08-23', 'bon', 1),
+(18, 'Loulou', 789456, '2024-08-23', 'bon', 1),
+(19, 'Loulou', 789456, '2024-08-23', 'bon', 1),
+(20, 'Loulou', 789456, '2024-08-23', 'bon', 1),
+(21, 'Loulou', 789456, '2024-08-23', 'bon', 1),
+(22, 'Pandaroux', 10, '2024-08-29', 'excellent', 1),
+(23, 'Fifi', 100, '2024-08-30', 'moyen', 1),
+(24, 'Fifi', 100, '2024-08-30', 'moyen', 1),
+(25, 'Fifi', 100, '2024-08-30', 'moyen', 1),
+(26, 'Fifi', 100, '2024-08-30', 'moyen', 1),
+(27, 'Fifi', 100, '2024-08-30', 'moyen', 1),
+(28, 'Fifi', 100, '2024-08-30', 'moyen', 1),
+(29, 'Fifi', 100, '2024-08-30', 'moyen', 1),
+(30, 'Fifi', 100, '2024-08-30', 'moyen', 1),
+(31, 'Fifi', 100, '2024-08-30', 'moyen', 1),
+(32, 'Fifi', 100, '2024-08-30', 'moyen', 1),
+(33, 'Pandaroux', 450, '2024-08-31', 'excellent', 1),
+(34, 'Pandaroux', 450, '2024-08-31', 'excellent', 1),
+(35, 'Pandaroux', 450, '2024-08-31', 'excellent', 1),
+(36, 'Pandaroux', 450, '2024-08-31', 'excellent', 1),
+(37, 'Pandaroux', 450, '2024-08-31', 'excellent', 1),
+(38, 'Pandaroux', 450, '2024-08-31', 'excellent', 1),
+(39, 'Pandaroux', 75852, '2024-09-03', 'excellent', 1),
+(40, 'Alphonse', 10000, '2024-09-07', '', 2),
+(41, 'Pandaroux', 75852, '2024-09-03', 'excellent', 1),
+(42, 'Pandaroux', 75852, '2024-09-03', 'excellent', 1),
+(43, 'Pandaroux', 75852, '2024-09-03', 'excellent', 1),
+(44, 'Pandaroux', 75852, '2024-09-03', 'excellent', 1),
+(45, 'Pandaroux', 75852, '2024-09-03', 'excellent', 1),
+(46, 'Pandaroux', 75852, '2024-09-03', 'excellent', 1),
+(47, 'Pandaroux', 75852, '2024-09-03', 'excellent', 1),
+(48, 'Pandaroux', 123, '2024-09-04', 'excellent', 1),
+(49, 'Tigrou', 55555, '2024-09-08', 'bon', 1),
+(50, 'Pandaroux', 789654123, '2024-09-07', 'bon', 1),
+(51, 'Pandaroux', 789654123, '2024-09-07', 'bon', 1),
+(52, 'Tigrou', 55555, '2024-09-08', 'bon', 1),
+(53, 'Tigrou', 7896, '2024-09-19', 'bon', 1),
+(54, 'Pandaroux', 1, '2024-08-06', 'excellent', 1),
+(55, 'Pandaroux', 1, '2024-08-06', 'excellent', 1),
+(56, 'Fifi', 456, '2024-08-15', 'excellent', 1),
+(57, 'Riri', 1, '2024-09-29', 'excellent', 1),
+(58, 'Loulou', 789, '2024-10-06', 'excellent', 1),
+(59, 'Fifi', 500, '2024-10-04', 'très bon', 1),
+(60, 'Loulou', 12321, '2024-12-06', 'bon', 1),
+(61, 'Pandaroux', 7896654, '2024-09-02', 'moyen', 1),
+(62, 'Tigrou', 1111111, '2024-12-06', 'excellent', 1),
+(63, 'Riri', 777777, '2025-01-05', '', 2),
+(64, 'Riri', 777777, '2025-01-05', '', 2),
+(65, 'Riri', 777777, '2025-01-05', '', 2),
+(66, 'Riri', 777777, '2025-01-05', '', 2),
+(67, 'Riri', 777777, '2025-01-05', '', 2),
+(68, 'Riri', 777777, '2025-01-05', '', 2),
+(69, 'Pandaroux', 0, '2025-06-28', '', 2),
+(70, 'Alphonse', 11, '2027-06-28', 'excellent', 3),
+(71, 'Loulou', 101010, '2025-09-28', 'bon', 1),
+(72, 'Pandaroux', 1477888787, '2028-06-29', 'excellent', 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `meals`
+-- Structure de la table `avis`
 --
 
-CREATE TABLE `meals` (
-  `meal_id` int(11) NOT NULL,
-  `animal_id` int(11) DEFAULT NULL,
-  `food` varchar(100) NOT NULL,
-  `meal_time` datetime NOT NULL
+CREATE TABLE `avis` (
+  `id` int(11) NOT NULL,
+  `pseudo` varchar(100) NOT NULL,
+  `texte` text NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `avis`
+--
+
+INSERT INTO `avis` (`id`, `pseudo`, `texte`, `date`) VALUES
+(55, 'panda', 'Ce zoo est top!', '2024-08-28 19:07:05'),
+(62, 'Girafou', 'Nous reviendrons visiter le zoo!', '2024-08-28 19:36:08'),
+(63, 'Azerty', 'Tout simplement génial!', '2024-08-28 19:49:26'),
+(64, 'Pseudo', 'Il faut agrandir ce zoo! Il est superbe.', '2024-08-28 19:50:06'),
+(65, 'Donald', 'Le zoo est vraiment sympa dans l\'ensemble, bien organisé et orienté, de grands espaces pour les animaux, propres, bien conçu, une variété d\'animaux donc une visite très agréable et conseillée pour adultes comme pour enfants.', '2024-08-28 19:51:05');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `habitat_clicks`
+--
+
+CREATE TABLE `habitat_clicks` (
+  `id` int(11) NOT NULL,
+  `habitat` varchar(255) NOT NULL,
+  `clicks` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `habitat_clicks`
+--
+
+INSERT INTO `habitat_clicks` (`id`, `habitat`, `clicks`) VALUES
+(1, 'La forêt tropicale', 1),
+(2, 'La savane Africaine', 0),
+(3, 'La forêt montagneuse', 0),
+(4, 'Le continent Antarctique', 0);
 
 -- --------------------------------------------------------
 
@@ -91,7 +178,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `role`) VALUES
-(1, 'admin', 'adminpassword', 'admin'),
+(1, 'admin', 'adminpass', 'admin'),
 (2, 'employe', '$2y$10$exemplehash2', 'employe'),
 (3, 'veterinaire', '$2y$10$exemplehash3', 'veterinaire');
 
@@ -100,25 +187,23 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `role`) VALUES
 --
 
 --
--- Index pour la table `animals`
+-- Index pour la table `animal_data`
 --
-ALTER TABLE `animals`
-  ADD PRIMARY KEY (`animal_id`);
+ALTER TABLE `animal_data`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `health`
+-- Index pour la table `avis`
 --
-ALTER TABLE `health`
-  ADD PRIMARY KEY (`record_id`),
-  ADD KEY `animal_id` (`animal_id`),
-  ADD KEY `veterinaire_id` (`veterinaire_id`);
+ALTER TABLE `avis`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `meals`
+-- Index pour la table `habitat_clicks`
 --
-ALTER TABLE `meals`
-  ADD PRIMARY KEY (`meal_id`),
-  ADD KEY `animal_id` (`animal_id`);
+ALTER TABLE `habitat_clicks`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `habitat` (`habitat`);
 
 --
 -- Index pour la table `users`
@@ -132,45 +217,28 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT pour la table `animals`
+-- AUTO_INCREMENT pour la table `animal_data`
 --
-ALTER TABLE `animals`
-  MODIFY `animal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `animal_data`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
--- AUTO_INCREMENT pour la table `health`
+-- AUTO_INCREMENT pour la table `avis`
 --
-ALTER TABLE `health`
-  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `avis`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
--- AUTO_INCREMENT pour la table `meals`
+-- AUTO_INCREMENT pour la table `habitat_clicks`
 --
-ALTER TABLE `meals`
-  MODIFY `meal_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `habitat_clicks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `health`
---
-ALTER TABLE `health`
-  ADD CONSTRAINT `health_ibfk_1` FOREIGN KEY (`animal_id`) REFERENCES `animals` (`animal_id`),
-  ADD CONSTRAINT `health_ibfk_2` FOREIGN KEY (`veterinaire_id`) REFERENCES `users` (`user_id`);
-
---
--- Contraintes pour la table `meals`
---
-ALTER TABLE `meals`
-  ADD CONSTRAINT `meals_ibfk_1` FOREIGN KEY (`animal_id`) REFERENCES `animals` (`animal_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
