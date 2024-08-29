@@ -87,7 +87,7 @@ $conn->close();
                 <a href="services.html">Services</a>
                 <a href="habitats.php">Habitats</a>
                 <a href="contact.html">Contact</a>
-                <a href="avis.html">Avis</a>
+                <a href="avis.php">Avis</a>
                 <a href="logout.php">Déconnexion</a>
             </nav>
             <button type="button" class="Menu">Menu</button>

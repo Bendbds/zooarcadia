@@ -5,16 +5,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Initialiser la connexion à la base de données
     $conn = initConnexion();
 
-    // Récupérer l'ID de l'habitat depuis les données POST
-    $habitat_id = $_POST['habitat_id'];
+    // Récupérer le nom de l'habitat depuis les données POST
+    $habitat = isset($_POST['habitat']) ? $conn->real_escape_string($_POST['habitat']) : '';
+
+    if (empty($habitat)) {
+        die("Invalid habitat name");
+    }
 
     // Préparer la requête de mise à jour pour incrémenter le nombre de clics
-    $stmt = $conn->prepare("UPDATE habitat_clicks SET clicks = clicks + 1 WHERE id = ?");
+    $stmt = $conn->prepare("INSERT INTO habitat_clicks (habitat, clicks) VALUES (?, 1) 
+                            ON DUPLICATE KEY UPDATE clicks = clicks + 1");
     if ($stmt === false) {
         die("Prepare failed: " . $conn->error);
     }
 
-    $stmt->bind_param('i', $habitat_id); // 'i' pour les entiers
+    $stmt->bind_param('s', $habitat); // 's' pour les chaînes de caractères
     if (!$stmt->execute()) {
         die("Execute failed: " . $stmt->error);
     }
@@ -66,9 +71,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div id="habitattigre">
         <nav>
-            <form id="habitatForm" method="POST" action="">
-                <input type="hidden" name="habitat_id" value="1">
-                <button type="button" class="savane" id="toggleButton">La forêt tropicale</button>
+            <form method="POST" action="habitats.php">
+                <input type="hidden" name="habitat" value="La forêt tropicale">
+                <button type="submit" class="foret">La forêt tropicale</button>
 
                 <span class="liste-cachee">
                     <p>La forêt tropicale, habitat de notre tigre:</p>
@@ -89,79 +94,89 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div id="habitatgirafe">
         <nav>
-            <button class="savane">La savane Africaine</button>
-            <span class="liste-cachee-deux">
-                <p>La savane Africaine, habitat de nos girafes:</p>
-                <br>
-                <p>Nom: Riri</p>
-                <p>Espèce: Girafe</p>
-                <p>Age: 7 ans</p>
-                <p>Poids: 962kg</p>
-                <p>Taille: 4,23 mètres</p>
-                <p>Avis du vétérinaire: Riri est en pleine forme, son vaccin doit être fait</p>
-                <br>
-                <img class="girafes" alt="girafes Africaines" src="https://cdn.pixabay.com/photo/2019/07/27/06/21/giraffe-4366005_1280.jpg">
-                <br>
+            <form method="POST" action="habitats.php">
+                <input type="hidden" name="habitat" value="La savane Africaine">
+                <button type="submit" class="savane">La savane Africaine</button>
 
-                <br>
-                <p>Nom: Fifi</p>
-                <p>Espèce: Girafe</p>
-                <p>Age: 5 ans</p>
-                <p>Poids: 922kg</p>
-                <p>Taille: 4,03 mètres</p>
-                <p>Avis du vétérinaire: Fifi grandit bien, Nourriture acceptée</p>
-                <br>
-                <img class="girafes" alt="girafes Africaines" src="https://cdn.pixabay.com/photo/2020/06/15/09/24/zoo-5301038_1280.jpg">
-                <br>
+                <span class="liste-cachee-deux">
+                    <p>La savane Africaine, habitat de nos girafes:</p>
+                    <br>
+                    <p>Nom: Riri</p>
+                    <p>Espèce: Girafe</p>
+                    <p>Age: 7 ans</p>
+                    <p>Poids: 962kg</p>
+                    <p>Taille: 4,23 mètres</p>
+                    <p>Avis du vétérinaire: Riri est en pleine forme, son vaccin doit être fait</p>
+                    <br>
+                    <img class="girafes" alt="girafes Africaines" src="https://cdn.pixabay.com/photo/2019/07/27/06/21/giraffe-4366005_1280.jpg">
+                    <br>
 
-                <p>Nom: Loulou</p>
-                <p>Espèce: Girafe</p>
-                <p>Age: 9 ans</p>
-                <p>Poids: 1050kg</p>
-                <p>Taille: 4,58 mètres</p>
-                <p>Avis du vétérinaire: Loulou a besoin d'attention mais il va très bien</p>
-                <br>
-                <img class="girafes" alt="girafes Africaines" src="https://cdn.pixabay.com/photo/2020/11/22/20/39/giraffe-5767909_1280.jpg">
-                <br>
-            </span>
+                    <br>
+                    <p>Nom: Fifi</p>
+                    <p>Espèce: Girafe</p>
+                    <p>Age: 5 ans</p>
+                    <p>Poids: 922kg</p>
+                    <p>Taille: 4,03 mètres</p>
+                    <p>Avis du vétérinaire: Fifi grandit bien, Nourriture acceptée</p>
+                    <br>
+                    <img class="girafes" alt="girafes Africaines" src="https://cdn.pixabay.com/photo/2020/06/15/09/24/zoo-5301038_1280.jpg">
+                    <br>
+
+                    <p>Nom: Loulou</p>
+                    <p>Espèce: Girafe</p>
+                    <p>Age: 9 ans</p>
+                    <p>Poids: 1050kg</p>
+                    <p>Taille: 4,58 mètres</p>
+                    <p>Avis du vétérinaire: Loulou a besoin d'attention mais il va très bien</p>
+                    <br>
+                    <img class="girafes" alt="girafes Africaines" src="https://cdn.pixabay.com/photo/2020/11/22/20/39/giraffe-5767909_1280.jpg">
+                    <br>
+                </span>
+            </form>
         </nav>
     </div>
-
     <div id="habitatpandaroux">
         <nav>
-            <button class="foret-montagneuse">La forêt montagneuse</button>
-            <span class="liste-cachee-trois">
-                <p>La forêt montagneuse, habitat de notre mascotte :</p>
-                <br>
-                <p>Nom: Pandaroux</p>
-                <p>Espèce: Panda roux</p>
-                <p>Age: 6 ans</p>
-                <p>Poids: 4.6kg</p>
-                <p>Taille: 0,58 mètres</p>
-                <p>Avis du vétérinaire: Padaroux est la mascotte du zoo, il s'épanoui pleinement dans son environnement.</p>
-                <br>
-                <img class="pandaroux" alt="panda roux" src="https://cdn.pixabay.com/photo/2018/06/30/19/02/panda-3508153_1280.jpg">
-                <br>
-            </span>
+            <form method="POST" action="habitats.php">
+                <input type="hidden" name="habitat" value="La forêt montagneuse">
+                <button type="submit" class="foret-montagneuse">La forêt montagneuse</button>
+
+                <span class="liste-cachee-trois">
+                    <p>La forêt montagneuse, habitat de notre mascotte :</p>
+                    <br>
+                    <p>Nom: Pandaroux</p>
+                    <p>Espèce: Panda roux</p>
+                    <p>Age: 6 ans</p>
+                    <p>Poids: 4.6kg</p>
+                    <p>Taille: 0,58 mètres</p>
+                    <p>Avis du vétérinaire: Padaroux est la mascotte du zoo, il s'épanoui pleinement dans son environnement.</p>
+                    <br>
+                    <img class="pandaroux" alt="panda roux" src="https://cdn.pixabay.com/photo/2018/06/30/19/02/panda-3508153_1280.jpg">
+                    <br>
+                </span>
+            </form>
         </nav>
     </div>
-
     <div id="habitatmanchot">
         <nav>
-            <button class="antarctique">Le continent Antartique</button>
-            <span class="liste-cachee-quatre">
-                <p>Le continent Antarctique, habitat de notre manchot Adelie :</p>
-                <br>
-                <p>Nom: Alphonse</p>
-                <p>Espèce: Manchot Adelie</p>
-                <p>Age: 12 ans</p>
-                <p>Poids: 4.7kg</p>
-                <p>Taille: 0,70 mètres</p>
-                <p>Avis du vétérinaire: Alphonse vient d'arriver au zoo, il mange bien et est en forme. Nous sommes impatients d'acceuillir d'autres manchots Adelie.</p>
-                <br>
-                <img class="manchot" alt="manchot Adelie" src="https://cdn.pixabay.com/photo/2021/11/09/17/08/bird-6781956_1280.jpg">
-                <br>
-            </span>
+            <form method="POST" action="habitats.php">
+                <input type="hidden" name="habitat" value="Le continent Antarctique">
+                <button type="submit" class="antarctique">Le continent Antartique</button>
+
+                <span class="liste-cachee-quatre">
+                    <p>La forêt tropicale, habitat de notre tigre:</p>
+                    <br>
+                    <p>Nom: Tigrou</p>
+                    <p>Espèce: Tigre du Bengale</p>
+                    <p>Age: 5 ans</p>
+                    <p>Poids: 110kg</p>
+                    <p>Taille: 2,56 mètres</p>
+                    <p>Avis du vétérinaire: Tigrou est en pleine forme et se rationne bien.</p>
+                    <br>
+                    <img class="tigrou" alt="Tigre du Bengale" src="https://cdn.pixabay.com/photo/2023/05/29/15/25/tiger-8026345_1280.jpg">
+                    <br>
+                </span>
+            </form>
         </nav>
     </div>
 

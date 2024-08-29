@@ -6,47 +6,75 @@ checkAccess();
 
 $success = false;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Traitement du formulaire d'ajout de données de soins des animaux
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['animal_id'], $_POST['quantity'], $_POST['checkup_date'], $_POST['health'])) {
     // Initialiser la connexion à la base de données
     $conn = initConnexion();
 
-    // Vérifiez si les variables POST sont définies
-    if (isset($_POST['animal_id'], $_POST['quantity'], $_POST['checkup_date'], $_POST['health'])) {
-        $animal_id = $_POST['animal_id'];
-        $quantity = $_POST['quantity'];
-        $checkup_date = $_POST['checkup_date'];
-        $health = $_POST['health'];
+    $animal_id = $_POST['animal_id'];
+    $quantity = $_POST['quantity'];
+    $checkup_date = $_POST['checkup_date'];
+    $health = $_POST['health'];
 
-        // Préparer et exécuter la requête d'insertion
-        $stmt = $conn->prepare("INSERT INTO animal_data (animal, quantity, checkup_date, health, user_id) VALUES (?, ?, ?, ?, ?)");
-        if ($stmt === false) {
-            die("Prepare failed: " . $conn->error);
-        }
-
-        $stmt->bind_param('sissi', $animal_id, $quantity, $checkup_date, $health, $_SESSION['user_id']);
-        if (!$stmt->execute()) {
-            die("Execute failed: " . $stmt->error);
-        }
-
-        $stmt->close();
-        $conn->close();
-
-        // Stocker la réussite dans une variable de session
-        $_SESSION['success'] = true;
-
-        // Redirige l'utilisateur vers la même page avec une requête GET
-        header("Location: " . $_SERVER['PHP_SELF']);
-
-        exit();
-    } else {
-        echo "Certaines données sont manquantes.";
+    // Préparer et exécuter la requête d'insertion
+    $stmt = $conn->prepare("INSERT INTO animal_data (animal, quantity, checkup_date, health, user_id) VALUES (?, ?, ?, ?, ?)");
+    if ($stmt === false) {
+        die("Prepare failed: " . $conn->error);
     }
+
+    $stmt->bind_param('sissi', $animal_id, $quantity, $checkup_date, $health, $_SESSION['user_id']);
+    if (!$stmt->execute()) {
+        die("Execute failed: " . $stmt->error);
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    // Stocker la réussite dans une variable de session
+    $_SESSION['success'] = true;
+
+    // Redirige l'utilisateur vers la même page avec une requête GET
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
+}
+
+// Traitement du formulaire pour réinitialiser les clics
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reset'])) {
+    $conn = initConnexion();
+
+    $stmt = $conn->prepare("UPDATE habitat_clicks SET clicks = 0");
+    if ($stmt === false) {
+        die("Prepare failed: " . $conn->error);
+    }
+
+    if (!$stmt->execute()) {
+        die("Execute failed: " . $stmt->error);
+    }
+
+    $stmt->close();
+    $conn->close();
+
+    // Rediriger vers la même page pour rafraîchir les données
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
 }
 
 // Initialiser la connexion à la base de données
 $conn = initConnexion();
 
-// Préparer et exécuter la requête de sélection
+// Préparer et exécuter la requête de sélection pour les clics des habitats
+$habitatClicksQuery = "SELECT * FROM habitat_clicks";
+$clicksStmt = $conn->prepare($habitatClicksQuery);
+if ($clicksStmt === false) {
+    die("Prepare failed: " . $conn->error);
+}
+
+$clicksStmt->execute();
+$clicksResult = $clicksStmt->get_result();
+$clicksData = $clicksResult->fetch_all(MYSQLI_ASSOC); // Récupérer les données sous forme de tableau associatif
+$clicksStmt->close();
+
+// Préparer et exécuter la requête de sélection pour les données de soins des animaux
 $sql = "SELECT * FROM animal_data a 
         JOIN users u ON u.user_id = a.user_id
         ORDER BY checkup_date DESC";
@@ -69,7 +97,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="css/admin.css">
-    <script defer src="js/admin.js"></script>
+    <script defer src="js/main.js"></script>
     <title>Admin - Gestion du zoo</title>
 </head>
 
@@ -85,9 +113,9 @@ $conn->close();
             <nav class="Header">
                 <a href="connexion.html">Connexion employés</a>
                 <a href="services.html">Services</a>
-                <a href="habitats.html">Habitats</a>
+                <a href="habitats.php">Habitats</a>
                 <a href="contact.html">Contact</a>
-                <a href="avis.html">Avis</a>
+                <a href="avis.php">Avis</a>
                 <a href="logout.php">Déconnexion</a>
             </nav>
             <button type="button" class="Menu">Menu</button>
@@ -145,9 +173,19 @@ $conn->close();
 
             <div class="container">
                 <h2>Suivi des habitats :</h2>
-                <div id="clics-display"></div>
-                <button id="reset-button" type="button">Réinitialiser</button>
-            </div>
+                <div id="clics-display">
+                <?php if (!empty($clicksData)) : ?>
+                <ul>
+                    <?php foreach ($clicksData as $row) : ?>
+                        <li>Habitat: <?php echo htmlspecialchars($row['habitat']); ?> - Clics: <?php echo htmlspecialchars($row['clicks']); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            <?php else : ?>
+                <p>Aucun clic enregistré.</p>
+            <?php endif; ?>
+            <form class="reset-form" method="POST" action="">
+            <button type="submit" name="reset">Réinitialiser</button>
+        </form>
             <div class="container">
                 <h2>Suivi des animaux</h2>
                 <textarea readonly name="soins" id="soins" rows="10" cols="50">
