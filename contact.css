@@ -22,19 +22,16 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    gap: 20px; /* Ajoute un espace de 20px entre les blocs */
 }
 
 .formcontact {
-    margin: 10px;
     background: linear-gradient(to bottom, #445843, #455e3b);
-    box-sizing: border-box;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     flex: 1;
     text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
     height: 300px;
 }
 
@@ -47,7 +44,7 @@
 
 .formcontact a {
     display: block;
-    margin-top: 10px;
+    margin-top: 20px;
     font-weight: bold;
     text-decoration: none;
     color: #ffffff;
