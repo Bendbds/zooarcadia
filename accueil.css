@@ -82,7 +82,7 @@
 @media (max-width: 1465px) {
     .explicatif {
         font-size: x-large;
-        width: 60%;
+        width: 100%;
         height: auto;
         margin: 10px auto;
     }
@@ -91,19 +91,12 @@
 @media (max-width: 800px) {
     .explicatif {
         font-size: large;
-        width: 80%;
-        height: auto;
-        margin: 10px auto;
     }
 }
 
 @media (max-width: 600px) {
     .explicatif {
         font-size: medium;
-        width: 90%;
-        height: auto;
-        margin: 10px auto 0 auto;
-        padding: 10px;
     }
 }
 
@@ -280,7 +273,6 @@ article {
     align-items: center;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-
 }
 
 /* Média queries pour des tailles d'écran spécifiques */
@@ -292,7 +284,6 @@ article {
 
     .description {
         font-size: 1em;
-
     }
 }
 

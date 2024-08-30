@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div id="habitattigre">
         <nav>
-            <form method="POST" action="habitats.php">
+            <form method="POST" action="habitats.php" class="habitat-form">
                 <input type="hidden" name="habitat" value="La forêt tropicale">
                 <button type="submit" class="foret">La forêt tropicale</button>
 

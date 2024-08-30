@@ -58,7 +58,7 @@
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
     
-.liste-cachee {
+.liste-cachee, .liste-cachee-deux, .liste-cachee-trois, .liste-cachee-quatre {
     display: none;
     margin-top: 20px;
     margin-left: 7px;
@@ -67,7 +67,7 @@
     color: #F0F0FF;
 }
 
-.liste-visible {
+.liste-visible, .liste-visible-deux, .liste-visible-trois, .liste-visible-quatre {
     display: block;
 }
 
@@ -77,7 +77,6 @@
     height: 70vh;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
-
 
 #habitatgirafe { /*image habitat girafe*/
     display: flex;
@@ -99,19 +98,6 @@
     justify-content: center;
     align-content: center;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-
-.liste-cachee-deux {
-    display: none;
-    margin-top: 20px;
-    margin-left: 7px;
-    padding: 0;
-    list-style-type: none;
-    color: #F0F0FF;
-}
-
-.liste-visible-deux {
-    display: block;
 }
 
 .girafes {
@@ -143,19 +129,6 @@
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.liste-cachee-trois {
-    display: none;
-    margin-top: 20px;
-    margin-left: 7px;
-    padding: 0;
-    list-style-type: none;
-    color: #F0F0FF;
-}
-
-.liste-visible-trois {
-    display: block;
-}
-
 .pandaroux {
     border-radius: 10px;
     display: flex;
@@ -183,19 +156,6 @@
     justify-content: center;
     align-content: center;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-
-.liste-cachee-quatre {
-    display: none;
-    margin-top: 20px;
-    margin-left: 7px;
-    padding: 0;
-    list-style-type: none;
-    color: #F0F0FF;
-}
-
-.liste-visible-quatre {
-    display: block;
 }
 
 .manchot {

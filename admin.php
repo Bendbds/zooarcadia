@@ -174,21 +174,21 @@ $conn->close();
             <div class="container">
                 <h2>Suivi des habitats :</h2>
                 <div id="clics-display">
-                <?php if (!empty($clicksData)) : ?>
-                <ul>
-                    <?php foreach ($clicksData as $row) : ?>
-                        <li>Habitat: <?php echo htmlspecialchars($row['habitat']); ?> - Clics: <?php echo htmlspecialchars($row['clicks']); ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            <?php else : ?>
-                <p>Aucun clic enregistré.</p>
-            <?php endif; ?>
-            <form class="reset-form" method="POST" action="">
-            <button type="submit" name="reset">Réinitialiser</button>
-        </form>
-            <div class="container">
-                <h2>Suivi des animaux</h2>
-                <textarea readonly name="soins" id="soins" rows="10" cols="50">
+                    <?php if (!empty($clicksData)) : ?>
+                        <ul>
+                            <?php foreach ($clicksData as $row) : ?>
+                                <li>Habitat: <?php echo htmlspecialchars($row['habitat']); ?> - Clics: <?php echo htmlspecialchars($row['clicks']); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php else : ?>
+                        <p>Aucun clic enregistré.</p>
+                    <?php endif; ?>
+                    <form class="reset-form" method="POST" action="">
+                        <button type="submit" name="reset">Réinitialiser</button>
+                    </form>
+                    <div class="container">
+                        <h2>Suivi des animaux</h2>
+                        <textarea readonly name="soins" id="soins" rows="10" cols="50">
             <?php
             foreach ($result as $data) {
                 echo 'Données transmises par : ' . $data['username'] . "\n" .
@@ -200,8 +200,8 @@ $conn->close();
             }
             ?>
             </textarea>
-            </div>
-        </div>
+                    </div>
+                </div>
     </main>
 
     <footer>

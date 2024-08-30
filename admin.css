@@ -20,6 +20,7 @@ h1 {
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
+
 h2{
     text-decoration: underline;
 }
@@ -62,7 +63,6 @@ form {
     justify-content: space-between;
 }
 
-
 /* Styles pour chaque groupe de formulaire */
 .form-group {
     display: flex;
@@ -104,9 +104,7 @@ button {
     text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
     width: 100%;
-    /* Prend toute la largeur disponible */
     max-width: 200px;
-    /* Largeur maximale pour le bouton */
 }
 
 /* Styles spécifiques pour textarea */

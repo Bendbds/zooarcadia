@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const menuButton = document.querySelector('.Menu');
-    const headerNav = document.querySelector('.Header');
+document.addEventListener("DOMContentLoaded", () => {
+  const menuButton = document.querySelector(".Menu");
+  const headerNav = document.querySelector(".Header");
 
-    menuButton.addEventListener('click', () => {
-        headerNav.classList.toggle('active');
-    });
+  menuButton.addEventListener("click", () => {
+    headerNav.classList.toggle("active");
+  });
 });

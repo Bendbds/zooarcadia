@@ -25,14 +25,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->close();
     $conn->close();
-           // Stocker la réussite dans une variable de session
-           $_SESSION['success'] = true;
-        
-           // Redirige l'utilisateur vers la même page avec une requête GET
-           header("Location: " . $_SERVER['PHP_SELF']);
-           
-           exit();
-       }
+    // Stocker la réussite dans une variable de session
+    $_SESSION['success'] = true;
+
+    // Redirige l'utilisateur vers la même page avec une requête GET
+    header("Location: " . $_SERVER['PHP_SELF']);
+
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
