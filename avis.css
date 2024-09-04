@@ -1,11 +1,11 @@
 /* Style pour la section des avis */
 .avis {
-    font-size: x-large;
+    font-size: 1.2em;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto;
+    height: 120px;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
@@ -122,27 +122,13 @@ h2 {
     font-size: 1.2em;
     text-align: center;
 }
+.avis-item {
+    transition: background 0.4s ease;
+}
 
 /* Ajoutez un effet de survol */
 .avis-item:hover {
-    background: #e3f2fd;
-    border-radius: 10px;
-    padding: 10px;
-    transition: background 0.3s ease;
-}
-
-/* Media queries pour petits écrans */
-@media (max-width: 768px) {
-    .avis-list {
-        width: 95%;
-    }
-}
-
-@media (max-width: 480px) {
-    .avis-list {
-        width: 100%;
-        padding: 15px;
-    }
+    background: rgb(0 0 0 / 0.2);
 }
 
 /* Style pour le formulaire */
@@ -165,7 +151,18 @@ form {
     }
 }
 
+/* Media queries pour petits écrans */
+@media (max-width: 768px) {
+    .avis-list {
+        width: 95%;
+    }
+}
+
 @media (max-width: 480px) {
+    .avis-list {
+        width: 100%;
+        padding: 15px;
+    }
     form {
         padding: 10px;
         justify-content: flex-start;

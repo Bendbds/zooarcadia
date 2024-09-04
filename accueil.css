@@ -21,16 +21,12 @@
 .flex-container {
     display: flex;
     flex-wrap: wrap;
-    /* Permet aux éléments de s'ajuster si nécessaire */
     justify-content: space-between;
-    /* Assure que les éléments sont bien espacés */
 }
 
 .explicatif {
     width: 49.3%;
-    /* Ajuste légèrement pour laisser un espace entre les éléments */
     box-sizing: border-box;
-    /* Inclut le padding et la bordure dans la largeur totale */
     font-size: xx-large;
     text-align: center;
     padding: 20px;
@@ -39,7 +35,6 @@
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-    /* Réglage de la hauteur automatique pour s'adapter au contenu */
     height: 540px;
     margin: 20px 0 20px 0;
 }
@@ -65,7 +60,11 @@
 @media (max-width: 1200px) {
     .text-panda {
         font-size: large;
-        /* Réduit la taille de la police pour les petits écrans */
+    }
+    .articles-container {
+        font-size: small;
+        gap: 10px;
+        flex-direction: column;
     }
 }
 
@@ -77,26 +76,9 @@
     }
 }
 
-
-/* Media query pour les écrans plus petits */
-@media (max-width: 1465px) {
-    .explicatif {
-        font-size: x-large;
-        width: 100%;
-        height: auto;
-        margin: 10px auto;
-    }
-}
-
-@media (max-width: 800px) {
-    .explicatif {
-        font-size: large;
-    }
-}
-
 @media (max-width: 600px) {
     .explicatif {
-        font-size: medium;
+        font-size: 0.9em;
     }
 }
 
@@ -189,16 +171,6 @@
     }
 }
 
-@media (max-width: 1200px) {
-    .articles-container {
-        font-size: small;
-        /* Réduit la taille de la police pour les petits écrans */
-        gap: 10px;
-        /* Réduit l'espace entre les éléments */
-        flex-direction: column;
-    }
-}
-
 h4 {
     color: white;
     text-decoration: underline;
@@ -244,24 +216,19 @@ article {
 
 .service-item .description {
     width: 100%;
-    /* La description prendra 100% de la largeur de .service-item */
     margin-top: 10px;
-    /* Marge top pour l'espace entre l'image et la description */
 }
 
 .service-item img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    object-fit: cover;
-    /* Important pour conserver les proportions */
+    object-fit: cover; /* Important pour conserver les proportions */
     width: 100%;
     height: 500px;
-    /* Hauteur fixe pour toutes les images */
 }
 
-.description {
-    /*texte train et restau*/
+.description {  /*texte train et restau*/
     display: flex;
     margin-top: 10px;
     font-size: 2rem;
@@ -311,25 +278,24 @@ article {
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: 1465px) {
-    .horaires {
-        font-size: medium;
-        /* Réduit la taille de la police pour les petits écrans */
-        gap: 10px;
-        /* Réduit l'espace entre les éléments */
-        flex-direction: column;
-        width: 100%;
-        max-height: 350px;
-        margin-bottom: 20px;
-    }
-}
-
 a {
     color: white;
 }
 
 @media (max-width: 1465px) {
-
+    .explicatif {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+    .horaires {
+        font-size: medium;
+        gap: 10px;
+        flex-direction: column;
+        width: 100%;
+        max-height: 350px;
+        margin-bottom: 20px;
+    }
     .image-broceliande {
         width: 100%;
         height: 140vh;
@@ -345,6 +311,6 @@ a {
 
     .image-girafes,
     .image-broceliande {
-        height: 80vh;
+        height: 60vh;
     }
 }

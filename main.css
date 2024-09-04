@@ -145,18 +145,6 @@ a{
     color: white;
 }
 
-/*style responsive petits écrans*/
-@media (max-width: 900px) {
-    .Mentions{
-        font-size: medium; /* Réduit la taille de la police pour les petits écrans */
-        gap: 10px; /* Réduit l'espace entre les éléments */
-        flex-direction: column;
-        width: calc(100%-20px);
-        justify-content: center;
-        align-items: center;
-    }
-}
-
 .imgbasg,
 .imgbasd {
     max-width: 16em; /* Conserver la largeur maximale */
@@ -179,7 +167,16 @@ a{
     margin-right: 5px;
 }
 
+/*style responsive petits écrans*/
 @media (max-width: 900px) {
+    .Mentions{
+        font-size: medium; /* Réduit la taille de la police pour les petits écrans */
+        gap: 10px; /* Réduit l'espace entre les éléments */
+        flex-direction: column;
+        width: calc(100%-20px);
+        justify-content: center;
+        align-items: center;
+    }
 
     .imgbasd,
     .imgbasg {

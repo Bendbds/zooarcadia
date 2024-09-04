@@ -1,5 +1,5 @@
 .titrehabitats { /* logo habitats*/
-    font-size: 2.5em;
+    font-size: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +46,7 @@
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.foret { /*bouton foret*/
+.foret, .savane, .foret-montagneuse, .antarctique { /*bouton foret*/
     display: flex;
     background-color: #85a57a;
     border-radius: 10px;
@@ -71,7 +71,7 @@
     display: block;
 }
 
-.tigrou {
+.tigrou, .girafes, .pandaroux, .manchot {
     border-radius: 10px;
     display: flex;
     height: 70vh;
@@ -86,26 +86,7 @@
     background-size: cover;
     min-height: 100vh; 
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4); 
-}
-
-.savane { /*bouton savane*/
-    display: flex;
-    background-color: #85a57a;
-    border-radius: 10px;
-    margin: 20px;
-    height: 2em;
-    width: 15em;
-    justify-content: center;
-    align-content: center;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-
-.girafes {
-    border-radius: 10px;
-    display: flex;
-    height: 70vh;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}     
+}    
 
 #habitatpandaroux { /*image habitat panda roux*/
     display: flex;
@@ -117,25 +98,6 @@
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.foret-montagneuse { /*bouton foret montagneuse*/
-    display: flex;
-    background-color: #85a57a;
-    border-radius: 10px;
-    margin: 20px;
-    height: 2em;
-    width: 15em;
-    justify-content: center;
-    align-content: center;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-
-.pandaroux {
-    border-radius: 10px;
-    display: flex;
-    height: 70vh;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}  
-
 #habitatmanchot { /*image habitat manchot*/
     display: flex;
     background: url(https://cdn.pixabay.com/photo/2016/08/26/10/19/south-pole-1621775_1280.jpg) ;
@@ -146,31 +108,12 @@
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-.antarctique { /*bouton continent Antarctique*/
-    display: flex;
-    background-color: #85a57a;
-    border-radius: 10px;
-    margin: 20px;
-    height: 2em;
-    width: 15em;
-    justify-content: center;
-    align-content: center;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-
-.manchot {
-    border-radius: 10px;
-    display: flex;
-    height: 70vh;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-}
-
 @media (max-width: 800px) {
     .tigrou,
     .girafes,
     .pandaroux,
     .manchot {
-        height: 34vh;
+        height: 32vh;
     }
     .explicatif{
         font-size: x-large;

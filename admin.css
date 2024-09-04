@@ -4,15 +4,10 @@ h1 {
     display: flex;
     text-align: center;
     flex-direction: column;
-    /* Aligne les éléments en colonne */
     align-items: center;
-    /* Centre les éléments horizontalement */
     justify-content: center;
-    /* Centre les éléments verticalement */
     width: calc(100% - 100px);
-    /* Réduit la largeur pour inclure les marges */
     margin: 20px auto;
-    /* Centre horizontalement */
     padding: 50px;
     background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
@@ -35,7 +30,6 @@ form {
     width: 100%;
     max-width: 600px;
     box-sizing: border-box;
-    /* Inclut le padding et la bordure dans la largeur totale */
 }
 
 #clics-display {
@@ -67,16 +61,13 @@ form {
 .form-group {
     display: flex;
     flex-direction: column;
-    /* Aligne les éléments du groupe en colonne */
-    gap: 10px;
-    /* Espacement entre le label et l'élément de formulaire */
+    gap: 8px;
+    margin-bottom: 5px;
 }
 
-/* Styles pour les labels */
 label {
     font-weight: bold;
-    text-align: left;
-    /* Aligne le texte du label à gauche */
+    text-align: center;
 }
 
 /* Styles pour les éléments de formulaire */
@@ -87,7 +78,6 @@ select {
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    /* Inclut le padding et la bordure dans la largeur totale */
 }
 
 /* Styles pour le bouton */
@@ -120,27 +110,26 @@ textarea {
 
 /* Media Queries pour la réactivité */
 @media (max-width: 1290px) {
-    .form-group {
-        align-items: flex-start;
-    }
-
-    label {
-        text-align: left;
-        margin-bottom: 5px;
-    }
-
     input,
     select {
         width: 100%;
-    }
-
-    textarea {
-        width: 125%;
     }
 }
 
 @media (max-width: 1100px) {
     .Header.active {
         font-size: 1.3em;
+    }
+    #clics-display,.container {
+        width:99%;
+        padding: 5px 3px 5px 2.3px;
+        margin: 5px 0px 5px 0px ;
+        box-shadow:none;
+    }
+}
+
+@media (max-width: 480px) {
+    #clics-display, .container {
+        padding: 0 1px 0 1px; /* Ajuste le padding pour les très petits écrans */
     }
 }
