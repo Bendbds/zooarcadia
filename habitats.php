@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="habitattigre">
         <nav>
             <form method="POST" action="habitats.php" class="habitat-form">
-                <input type="hidden" name="habitat" value="La forêt tropicale">
+                <input type="hidden" name="habitat" value="La foret tropicale">
                 <button type="submit" class="foret">La forêt tropicale</button>
 
                 <span class="liste-cachee">
@@ -138,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="habitatpandaroux">
         <nav>
             <form method="POST" action="habitats.php">
-                <input type="hidden" name="habitat" value="La forêt montagneuse">
+                <input type="hidden" name="habitat" value="La foret montagneuse">
                 <button type="submit" class="foret-montagneuse">La forêt montagneuse</button>
 
                 <span class="liste-cachee-trois">

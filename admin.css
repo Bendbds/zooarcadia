@@ -16,7 +16,7 @@ h1 {
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
 }
 
-h2{
+h2 {
     text-decoration: underline;
 }
 
@@ -33,6 +33,7 @@ form {
 }
 
 #clics-display {
+    width: 70%;
     background-color: #5d7854;
     border-radius: 10px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
@@ -110,6 +111,7 @@ textarea {
 
 /* Media Queries pour la réactivité */
 @media (max-width: 1290px) {
+
     input,
     select {
         width: 100%;
@@ -120,16 +122,34 @@ textarea {
     .Header.active {
         font-size: 1.3em;
     }
-    #clics-display,.container {
-        width:99%;
+
+    #clics-display,
+    .container {
+        width: 99%;
         padding: 5px 3px 5px 2.3px;
-        margin: 5px 0px 5px 0px ;
-        box-shadow:none;
+        margin: 5px 0px 5px 0px;
+        box-shadow: none;
     }
 }
 
-@media (max-width: 480px) {
-    #clics-display, .container {
-        padding: 0 1px 0 1px; /* Ajuste le padding pour les très petits écrans */
+@media (max-width: 600px) {
+
+    #clics-display,
+    .container {
+        padding: 0 1px 0 1px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Centre les éléments à l'intérieur de chaque .form-group */
+    }
+
+    input,
+    select {
+        padding: 8px;
+        text-align: center;
+        width: 100%;
     }
 }

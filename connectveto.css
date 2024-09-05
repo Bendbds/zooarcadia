@@ -32,6 +32,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -41,7 +42,6 @@ label {
     /* Prend autant d'espace que possible */
     margin: 0;
     font-weight: bold;
-    text-align: right;
 }
 
 /* Styles pour les éléments de formulaire */
@@ -87,16 +87,19 @@ button:active {
     transform: scale(0.98);
 }
 
-/* Media Queries pour la réactivité */
-@media (max-width: 1290px) {
-
-    textarea {
-        width: 100%;
-    }
-}
-
 @media (max-width: 600px) {
+    /* Réduisez les marges et paddings pour les petits écrans */
+    form {
+        padding: 5px;
+    }
 
+    /* Ajustez la taille des inputs pour les petits écrans */
+    input,
+    select {
+        width: 100%;
+        padding: 5px;
+    }
+    
     textarea {
         width: 130%;
     }

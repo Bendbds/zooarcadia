@@ -40,7 +40,7 @@
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.4);
-    margin: 10px auto;
+    margin: 10px 5px 0 5px;
     padding: 10px;
     resize: vertical;
 }

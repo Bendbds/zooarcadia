@@ -39,8 +39,6 @@
     display: flex;
     gap: 10px;
     margin: 50px auto;
-    /* Centrer le conteneur horizontalement */
-    padding: 0 10px;
 }
 
 .card {
@@ -70,7 +68,7 @@
 }
 
 .card-content>.title {
-    margin-left: 10px;
+    margin-left: 7px;
     transform: translateY(100%);
     opacity: 0;
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -105,8 +103,7 @@
     .titre-services,
     .menu-restauration,
     .activites {
-        font-size: 0.7em;
-        /* Réduit la taille de la police pour les petits écrans */
+        font-size: 0.8em;
         margin: 20px 0 20px 0;
         width: 100%;
     }

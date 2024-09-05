@@ -33,7 +33,7 @@ $conn->close();
 // Vérifier le mot de passe
 if (!password_verify($motdepasse, $user['password'])) {
     $_SESSION['error'] = 'Identifiant ou mot de passe incorrect';
-    header('Location: /zooarcadia/connexion.html');
+    header('Location: /connexion.html');
 }
 
 // Authentification réussie
@@ -49,6 +49,6 @@ if ($user['role'] === 'veterinaire') {
 } elseif ($user['role'] === 'employe') {
     header('Location: /zooarcadia/employe.php');
 } else {
-    header('Location: /zooarcadia/connexion.html');
+    header('Location: /zooarcadia/connexion.php');
 }
 exit();

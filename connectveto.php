@@ -111,17 +111,17 @@ $conn->close();
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div>
                     <label for="quantity">Quantité de nourriture donnée :</label>
                     <input type="number" id="quantity" name="quantity" placeholder="Entrez la quantité en grammes" required />
                 </div>
 
-                <div class="form-group">
+                <div>
                     <label for="checkup_date">Date du suivi :</label>
                     <input type="date" id="checkup_date" name="checkup_date" required />
                 </div>
 
-                <div class="form-group">
+                <div>
                     <label for="health">État de santé :</label>
                     <select id="health" name="health">
                         <option value="excellent">Excellent</option>
@@ -131,7 +131,7 @@ $conn->close();
                         <option value="à soigner">À soigner</option>
                     </select>
                 </div>
-
+ 
                 <button type="submit">Ajouter</button>
                 <?php
                 if (isset($_SESSION['success']) && $_SESSION['success'] === true) {
