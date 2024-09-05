@@ -1,65 +1,89 @@
-Guide de Déploiement pour l'Hébergement sur o2switch
-Ce guide vous explique comment déployer le site web "Le Zoo d'Arcadia" sur o2switch. Ce guide suppose que vous avez déjà un compte et un espace d'hébergement chez o2switch.
+Guide de Déploiement pour l'Hébergement en local puis sur o2switch
+Ce guide vous explique comment déployer le site web "Le Zoo d'Arcadia" en local sur o2switch. Ce guide suppose que vous avez déjà un compte et un espace d'hébergement chez o2switch.
 
 Prérequis
 Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
+XAMPP ou équivalent.
+phpMyAdmin pour gérer vos bases de données MySQL.
 Un compte o2switch avec un domaine configuré.
 Accès à cPanel pour gérer votre hébergement.
-Un client FTP (comme FileZilla) pour transférer les fichiers vers le serveur.
+Un client FTP (comme FileZilla)  ou le système de gestion de fichier integré de O2SWITCH pour transférer les fichiers vers le serveur.
 Git (facultatif, pour cloner le repository depuis GitHub).
 npm - Pour installer les dépendances du projet, si nécessaire.
 Éditeur de code (VSCode, Sublime Text, etc.) - Pour visualiser et modifier le code si nécessaire.
-Instructions de Déploiement
-1. Cloner le Repository (facultatif)
-Si vous souhaitez travailler sur le code localement avant de le déployer :
 
-Ouvrez votre terminal et exécutez la commande suivante pour cloner le repository depuis GitHub :
+Instructions de Déploiement en local
+
+Prérequis
+XAMPP : Assurez-vous que XAMPP est installé sur votre machine. XAMPP inclut Apache, MySQL et PHP, qui sont nécessaires pour exécuter des sites web dynamiques en local.
+VSCode : Utilisez un éditeur de code comme Visual Studio Code pour modifier et gérer votre code.
+phpMyAdmin : Pour gérer vos bases de données MySQL, phpMyAdmin est intégré dans XAMPP, vous permettant de manipuler et administrer vos bases de données facilement via une interface web.
+
+
+1. Installer XAMPP et Configurer l’Environnement
+Lancer XAMPP: Ouvrez XAMPP et démarrez les modules Apache et MySQL.
+Répertoire de Travail: Placez vos fichiers dans le dossier htdocs de XAMPP (généralement situé dans C:/xampp/htdocs).
+
+2. Cloner le Repository (facultatif)
+Si vous souhaitez travailler sur votre projet localement, suivez les étapes ci-dessous pour cloner votre repository depuis GitHub et l'installer dans le répertoire XAMPP.
+
+Étapes :
+Ouvrez VSCode et ouvrez un terminal intégré.
+
+Exécutez la commande suivante pour cloner le repository :
 
 bash
-Copier le code
 git clone https://github.com/Bendbds/le-zoo-arcadia.git
-Accédez au répertoire du projet :
+Accédez au répertoire du projet 
 
 bash
-Copier le code
 cd le-zoo-arcadia
-Installez les dépendances (si nécessaires) :
+Déplacez le dossier cloné dans C:/xampp/htdocs/.
 
-bash
-Copier le code
-npm install
-2. Construire le Projet (si applicable)
-Si votre projet nécessite une étape de build (par exemple, pour un projet React, Vue.js, etc.) :
+3. Configurer la Base de Données via phpMyAdmin
+   
+Si votre site utilise une base de données, vous devrez la configurer via phpMyAdmin.
 
-bash
-Copier le code
-npm run build
-Cela générera un dossier dist ou build contenant les fichiers prêts pour la production.
+Étapes :
+Ouvrez un navigateur et allez à http://localhost/phpmyadmin.
+Créez une nouvelle base de données pour votre projet.
+Importez un fichier SQL (si vous en avez un) en utilisant l'onglet Import.
+Modifiez les fichiers de configuration de votre projet (comme config.php) pour pointer vers cette nouvelle base de données, par exemple :
 
-3. Connexion à cPanel
+php
+
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');  // L’utilisateur par défaut
+define('DB_PASSWORD', '');  // Pas de mot de passe par défaut
+define('DB_NAME', 'nom_de_votre_base_de_données');
+
+4. Accéder à Votre Projet Localement
+Ouvrez un navigateur et allez à http://localhost/le-zoo-arcadia/ pour voir votre projet en local.
+
+5. Connexion à cPanel pour O2Switch
 Connectez-vous à votre compte o2switch et accédez à cPanel.
 
 Dans cPanel, allez dans Gestion des fichiers et ouvrez le répertoire public_html.
 
-4. Transférer les Fichiers vers le Serveur
-Utilisez un client FTP comme FileZilla pour vous connecter à votre serveur o2switch. Les informations FTP sont disponibles dans votre cPanel, sous Comptes FTP.
+6. Transférer les Fichiers vers le Serveur
+Utilisez un client FTP comme FileZilla ou le gestionnaire de fichiers o2Switch pour vous connecter à votre serveur o2switch. Les informations FTP sont disponibles dans votre cPanel, sous Comptes FTP.
 
 Naviguez dans le répertoire public_html. Si vous souhaitez déployer le site à la racine de votre domaine principal, c'est ici que vous placerez vos fichiers.
 
 Téléversez les fichiers du projet (ou le contenu du dossier build/dist si vous avez effectué un build) dans ce répertoire.
 
-5. Configuration du Domaine (si nécessaire)
+7. Configuration du Domaine (si nécessaire)
 Si votre domaine n'est pas encore configuré, assurez-vous de pointer les enregistrements DNS de votre domaine vers les serveurs de noms d'o2switch. Ces informations se trouvent dans le panneau d'administration de votre domaine.
 
 Si vous souhaitez déployer le site dans un sous-dossier ou sur un sous-domaine, configurez cela via cPanel en utilisant l'option Sous-domaines ou Domaines supplémentaires.
 
-6. Tester le Déploiement
+8. Tester le Déploiement
 Une fois les fichiers téléversés, ouvrez votre navigateur et allez à votre domaine ou sous-domaine pour vérifier que le site "Le Zoo d'Arcadia" est bien en ligne.
 
 Vérifiez que toutes les pages se chargent correctement et que le site fonctionne comme prévu.
 
-7. Configurer un Certificat SSL (HTTPS)
+8. Configurer un Certificat SSL (HTTPS)
 Dans cPanel, allez dans la section Let's Encrypt™ SSL.
 
 Sélectionnez votre domaine et suivez les instructions pour générer un certificat SSL gratuit.
@@ -68,62 +92,4 @@ Une fois le certificat installé, assurez-vous que toutes les URL de votre site 
 
 Notes Additionnelles
 Si vous rencontrez des erreurs 500 ou d'autres problèmes liés au serveur, vérifiez les fichiers .htaccess pour toute mauvaise configuration.
-En cas de besoin, le support technique d'o2switch est disponible 24/7 pour vous aider avec le déploiement.
-Voilà, votre site "Le Zoo d'Arcadia" devrait maintenant être en ligne et accessible sur o2switch !
-Guide de Déploiement Local pour le site "Le Zoo d'Arcadia"
-
-Ce guide vous explique comment déployer localement le site web "Le Zoo d'Arcadia" qui est actuellement hébergé sur Netlify.
-Prérequis
-
-Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
-
-    Navigateur web moderne (Chrome, Firefox, Safari, etc.)
-    Git - Pour cloner le repository depuis GitHub.
-    npm - Pour installer les dépendances du projet, si nécessaires.
-    Éditeur de code (VSCode, Sublime Text, etc.) - Pour visualiser et modifier le code si nécessaire.
-
-Instructions de Déploiement
-
-Suivez ces étapes pour déployer le site localement :
-
-    Clonez le repository :
-
-    Ouvrez votre terminal et exécutez la commande suivante pour cloner le repository depuis GitHub :
-
-git clone https://github.com/Bendbds/le-zoo-arcadia.git
-
-Accédez au répertoire du projet :
-
-cd le-zoo-arcadia
-
-Installez les dépendances (si nécessaires) :
-
-npm install
-
-Démarrez un serveur local :
-
-live-server par exemple
-
-Installez live-server (si ce n'est pas déjà fait) :
-
-npm install -g live-server
-
-Démarrez live-server :
-
-Naviguez jusqu'au répertoire de votre projet dans le terminal, puis exécutez :
-
-live-server
-
-Cela démarre un serveur local avec rechargement automatique sur le port par défaut (généralement 8080).
-
-Si besoin, ouvrez le site dans votre navigateur :
-
-Une fois le serveur local démarré, ouvrez votre navigateur web et entrez l'URL suivante dans la barre d'adresse :
-
-    http://localhost:8080
-
-    Assurez-vous de remplacer 8080 si besoin par le port utilisé par votre serveur local si vous avez spécifié un port différent à l'étape précédente.
-
-    Explorez le site :
-
-    Le site "Le Zoo d'Arcadia" devrait maintenant être accessible localement dans votre navigateur. Naviguez à travers les différentes pages pour vérifier le fonctionnement et l'apparence du site.
+Voilà, le site "Le Zoo d'Arcadia" est maintenant être en ligne et accessible sur o2switch !
