@@ -83,7 +83,7 @@ Une fois les fichiers téléversés, ouvrez votre navigateur et allez à votre d
 
 Vérifiez que toutes les pages se chargent correctement et que le site fonctionne comme prévu.
 
-8. Configurer un Certificat SSL (HTTPS)
+9. Configurer un Certificat SSL (HTTPS)
 Dans cPanel, allez dans la section Let's Encrypt™ SSL.
 
 Sélectionnez votre domaine et suivez les instructions pour générer un certificat SSL gratuit.
