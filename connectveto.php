@@ -4,8 +4,6 @@ require_once('libs/global.php');
 // Vérifiez si la fonction checkAccess() est nécessaire
 checkAccess();
 
-$success = false;
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Initialiser la connexion à la base de données
     $conn = initConnexion();
@@ -20,12 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Préparer et exécuter la requête d'insertion
         $stmt = $conn->prepare("INSERT INTO animal_data (animal, quantity, checkup_date, health, user_id) VALUES (?, ?, ?, ?, ?)");
         if ($stmt === false) {
-            die("Prepare failed: " . $conn->error);
+            die("Erreur de préparation : " . htmlspecialchars($conn->error, ENT_QUOTES, 'UTF-8'));
         }
 
         $stmt->bind_param('sissi', $animal_id, $quantity, $checkup_date, $health, $_SESSION['user_id']);
         if (!$stmt->execute()) {
-            die("Execute failed: " . $stmt->error);
+            die("Erreur d'exécution : " . htmlspecialchars($stmt->error, ENT_QUOTES, 'UTF-8'));
         }
 
         $stmt->close();
@@ -35,8 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['success'] = true;
 
         // Redirige l'utilisateur vers la même page avec une requête GET
-        header("Location: " . $_SERVER['PHP_SELF']);
-
+        header("Location: " . htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8'));
         exit();
     } else {
         echo "Certaines données sont manquantes.";
@@ -52,7 +49,7 @@ $sql = "SELECT * FROM animal_data a
         ORDER BY checkup_date DESC";
 $stmt = $conn->prepare($sql);
 if ($stmt === false) {
-    die("Prepare failed: " . $conn->error);
+    die("Erreur de préparation : " . htmlspecialchars($conn->error, ENT_QUOTES, 'UTF-8'));
 }
 
 $stmt->execute();
@@ -60,6 +57,7 @@ $result = $stmt->get_result();
 $stmt->close();
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -70,7 +68,7 @@ $conn->close();
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/connectveto.css">
     <script defer src="js/main.js"></script>
-    <title>Connexion employés zoo ARCADIA</title>
+    <title>Espace Vétérinaire - Zoo Arcadia</title>
 </head>
 
 <body>
@@ -83,7 +81,7 @@ $conn->close();
                 </a>
             </div>
             <nav class="Header">
-                <a href="connexion.html">Connexion employés</a>
+                <a href="connexions.php">Connexion employés</a>
                 <a href="services.html">Services</a>
                 <a href="habitats.php">Habitats</a>
                 <a href="contact.html">Contact</a>
@@ -135,7 +133,7 @@ $conn->close();
                 <button type="submit">Ajouter</button>
                 <?php
                 if (isset($_SESSION['success']) && $_SESSION['success'] === true) {
-                    echo '<p>Les informations ont été enregistrées avec succès !</p>';
+                    echo '<p>' . htmlspecialchars('Les informations ont été enregistrées avec succès !', ENT_QUOTES, 'UTF-8') . '</p>';
                     // Reset
                     unset($_SESSION['success']);
                 }
@@ -147,11 +145,11 @@ $conn->close();
                 <textarea readonly name="soins" id="soins" rows="10" cols="50">
             <?php
             foreach ($result as $data) {
-                echo 'Données transmises par : ' . $data['username'] . "\n" .
-                    'Animal choisi : ' . $data['animal'] . "\n" .
-                    'Quantité de nourriture donnée : ' . $data['quantity'] . "\n" .
-                    'Date du suivi : ' . $data['checkup_date'] . "\n" .
-                    'Etat de santé : ' . $data['health'] . "\n" .
+                echo 'Données transmises par : ' . htmlspecialchars($data['username'], ENT_QUOTES, 'UTF-8') . "\n" .
+                    'Animal choisi : ' . htmlspecialchars($data['animal'], ENT_QUOTES, 'UTF-8') . "\n" .
+                    'Quantité de nourriture donnée : ' . htmlspecialchars($data['quantity'], ENT_QUOTES, 'UTF-8') . "\n" .
+                    'Date du suivi : ' . htmlspecialchars($data['checkup_date'], ENT_QUOTES, 'UTF-8') . "\n" .
+                    'Etat de santé : ' . htmlspecialchars($data['health'], ENT_QUOTES, 'UTF-8') . "\n" .
                     '---' . "\n";
             }
             ?>

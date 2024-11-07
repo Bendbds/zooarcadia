@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </a>
             </div>
             <nav class="Header">
-                <a href="connexion.html">Connexion employés</a>
+                <a href="connexions.php">Connexion employés</a>
                 <a href="services.html">Services</a>
                 <a href="habitats.php">Habitats</a>
                 <a href="contact.html">Contact</a>

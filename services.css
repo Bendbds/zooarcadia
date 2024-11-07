@@ -3,9 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc(100% - 9px);
+    width: calc(100% - 16px);
     height: 120px;
     margin: 20px 10px 15px 8px;
+    padding:0 5px 0 5px;
     border-radius: 10px;
     background: linear-gradient(to bottom, #445843, #455e3b);
     color: white;
@@ -21,10 +22,9 @@
     font-style: italic;
     align-items: center;
     justify-content: center;
-    width: calc(100% - 9px);
+    width: calc(100% - 5px);
     height: 70px;
     margin: 20px 10px 15px 8px;
-    max-width: 1520px;
     border-radius: 10px;
     background: linear-gradient(to bottom, #445843, #455e3b);
     color: whitesmoke;
@@ -103,7 +103,7 @@
     .titre-services,
     .menu-restauration,
     .activites {
-        font-size: 0.8em;
+        font-size: 1em;
         margin: 20px 0 20px 0;
         width: 100%;
     }

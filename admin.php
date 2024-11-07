@@ -1,77 +1,69 @@
 <?php
 require_once('libs/global.php');
 
-// Vérifiez si la fonction checkAccess() est nécessaire
 checkAccess();
 
 $success = false;
 
+// Initialiser la connexion à la base de données
+$conn = initConnexion();
+
 // Traitement du formulaire d'ajout de données de soins des animaux
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['animal_id'], $_POST['quantity'], $_POST['checkup_date'], $_POST['health'])) {
-    // Initialiser la connexion à la base de données
-    $conn = initConnexion();
-
-    $animal_id = $_POST['animal_id'];
-    $quantity = $_POST['quantity'];
+    $animal_id = trim($_POST['animal_id']);
+    $quantity = (int)$_POST['quantity']; // Assurez-vous que la quantité est un entier
     $checkup_date = $_POST['checkup_date'];
-    $health = $_POST['health'];
+    $health = trim($_POST['health']);
 
     // Préparer et exécuter la requête d'insertion
     $stmt = $conn->prepare("INSERT INTO animal_data (animal, quantity, checkup_date, health, user_id) VALUES (?, ?, ?, ?, ?)");
     if ($stmt === false) {
-        die("Prepare failed: " . $conn->error);
+        die("Prepare failed: " . htmlspecialchars($conn->error, ENT_QUOTES, 'UTF-8'));
     }
 
     $stmt->bind_param('sissi', $animal_id, $quantity, $checkup_date, $health, $_SESSION['user_id']);
     if (!$stmt->execute()) {
-        die("Execute failed: " . $stmt->error);
+        die("Execute failed: " . htmlspecialchars($stmt->error, ENT_QUOTES, 'UTF-8'));
     }
 
     $stmt->close();
-    $conn->close();
 
     // Stocker la réussite dans une variable de session
     $_SESSION['success'] = true;
 
     // Redirige l'utilisateur vers la même page avec une requête GET
-    header("Location: " . $_SERVER['PHP_SELF']);
+    header("Location: " . htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8'));
     exit();
 }
 
 // Traitement du formulaire pour réinitialiser les clics
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reset'])) {
-    $conn = initConnexion();
-
     $stmt = $conn->prepare("UPDATE habitat_clicks SET clicks = 0");
     if ($stmt === false) {
-        die("Prepare failed: " . $conn->error);
+        die("Prepare failed: " . htmlspecialchars($conn->error, ENT_QUOTES, 'UTF-8'));
     }
 
     if (!$stmt->execute()) {
-        die("Execute failed: " . $stmt->error);
+        die("Execute failed: " . htmlspecialchars($stmt->error, ENT_QUOTES, 'UTF-8'));
     }
 
     $stmt->close();
-    $conn->close();
 
     // Rediriger vers la même page pour rafraîchir les données
-    header("Location: " . $_SERVER['PHP_SELF']);
+    header("Location: " . htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8'));
     exit();
 }
-
-// Initialiser la connexion à la base de données
-$conn = initConnexion();
 
 // Préparer et exécuter la requête de sélection pour les clics des habitats
 $habitatClicksQuery = "SELECT * FROM habitat_clicks";
 $clicksStmt = $conn->prepare($habitatClicksQuery);
 if ($clicksStmt === false) {
-    die("Prepare failed: " . $conn->error);
+    die("Prepare failed: " . htmlspecialchars($conn->error, ENT_QUOTES, 'UTF-8'));
 }
 
 $clicksStmt->execute();
 $clicksResult = $clicksStmt->get_result();
-$clicksData = $clicksResult->fetch_all(MYSQLI_ASSOC); // Récupérer les données sous forme de tableau associatif
+$clicksData = $clicksResult->fetch_all(MYSQLI_ASSOC);
 $clicksStmt->close();
 
 // Préparer et exécuter la requête de sélection pour les données de soins des animaux
@@ -80,14 +72,16 @@ $sql = "SELECT * FROM animal_data a
         ORDER BY checkup_date DESC";
 $stmt = $conn->prepare($sql);
 if ($stmt === false) {
-    die("Prepare failed: " . $conn->error);
+    die("Prepare failed: " . htmlspecialchars($conn->error, ENT_QUOTES, 'UTF-8'));
 }
 
 $stmt->execute();
 $result = $stmt->get_result();
 $stmt->close();
+
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -111,7 +105,7 @@ $conn->close();
                 </a>
             </div>
             <nav class="Header">
-                <a href="connexion.html">Connexion employés</a>
+                <a href="connexions.php">Connexion employés</a>
                 <a href="services.html">Services</a>
                 <a href="habitats.php">Habitats</a>
                 <a href="contact.html">Contact</a>

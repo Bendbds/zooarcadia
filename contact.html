@@ -8,6 +8,48 @@
     <link rel="stylesheet" href="css/contact.css">
     <script defer src="js/main.js"></script>
     <title>Contacter votre zoo Arcadia</title>
+    <!-- Firebase App (Core) -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAxJ5mKB2DEzRAi8NoVfEG89wM3Qpab35Q",
+            authDomain: "arcadia14.firebaseapp.com",
+            projectId: "arcadia14",
+            storageBucket: "arcadia14.appspot.com",
+            messagingSenderId: "230094407275",
+            appId: "1:230094407275:web:65ea5786845081f98dd32e",
+            measurementId: "G-5479SQWV6V"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const logClick = async (platform) => {
+                try {
+                    await addDoc(collection(db, 'clicks'), {
+                        platform: platform,
+                        timestamp: new Date().toISOString(),
+                    });
+                    console.log(`Click recorded: ${platform}`);
+                } catch (error) {
+                    console.error("Error adding document: ", error);
+                }
+            };
+
+            document.querySelectorAll('.formcontact a').forEach(link => {
+                link.addEventListener('click', (event) => {
+                    const platform = event.currentTarget.href.includes('instagram') ? 'Instagram' : 'Facebook';
+                    logClick(platform);
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -20,7 +62,7 @@
                 </a>
             </div>
             <div class="Header">
-                <a href="connexion.html">Connexion employés</a>
+                <a href="connexions.php">Connexion employés</a>
                 <a href="services.html">Services</a>
                 <a href="habitats.php">Habitats</a>
                 <a href="contact.html">Contact</a>

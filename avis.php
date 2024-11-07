@@ -5,12 +5,13 @@ require_once('libs/global.php');
 // Initialiser la connexion à la base de données
 $conn = initConnexion();
 
+// Traitement du formulaire
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_SESSION['form_submitted'])) {
-    $pseudo = $_POST['pseudo'];
-    $texte = $_POST['textavis']; // Utilisation du bon nom de champ ici
+    $pseudo = trim($_POST['pseudo']);
+    $texte = trim($_POST['textavis']); // Utilisation du bon nom de champ ici
 
     // Validation simple des champs
-    if (!empty(trim($pseudo)) && !empty(trim($texte))) {
+    if (!empty($pseudo) && !empty($texte)) {
         // Préparer et exécuter la requête d'insertion
         $stmt = $conn->prepare("INSERT INTO avis (pseudo, texte) VALUES (?, ?)");
         if ($stmt === false) {
@@ -49,23 +50,9 @@ if (isset($_SESSION['form_submitted']) && $_SESSION['form_submitted'] === true) 
     unset($_SESSION['form_submitted']);
 }
 
-// Préparer et exécuter la requête de sélection pour les données des animaux
-$sql = "SELECT * FROM animal_data a 
-        JOIN users u ON u.user_id = a.user_id
-        ORDER BY checkup_date DESC";
-$stmt = $conn->prepare($sql);
-if ($stmt === false) {
-    die("Prepare failed: " . $conn->error);
-}
-
-$stmt->execute();
-$animal_result = $stmt->get_result(); // Renommer la variable pour éviter la confusion avec $result
-$stmt->close();
-
 // Fermer la connexion à la base de données
 $conn->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -88,13 +75,14 @@ $conn->close();
                 </a>
             </div>
             <nav class="Header">
-                <a href="connexion.html">Connexion employés</a>
+                <a href="connexions.php">Connexion employés</a>
                 <a href="services.html">Services</a>
                 <a href="habitats.php">Habitats</a>
                 <a href="contact.html">Contact</a>
                 <a href="avis.php">Avis</a>
             </nav>
             <button type="button" class="Menu">Menu</button>
+        </nav>
     </header>
 
     <div class="avis">
@@ -112,7 +100,7 @@ $conn->close();
     <div id="form_submitted">
         <h2>Vos avis récents :</h2>
         <div class="avis-container">
-            <div id="avis-list" class="avis-list" readonly name="avis-list" placeholder="Aucun avis disponible pour l'instant">
+            <div id="avis-list" class="avis-list">
                 <?php foreach ($avis as $avisItem): ?>
                     <div class="avis-item">
                         <strong><?php echo htmlspecialchars($avisItem['pseudo']); ?>:</strong>
@@ -122,17 +110,18 @@ $conn->close();
                 <?php endforeach; ?>
             </div>
         </div>
+    </div>
 
-        <footer>
-            <div id="imgfooter">
-                <img src="https://cdn.pixabay.com/photo/2018/11/11/16/51/bird-3809147_1280.jpg" alt="oiseau" class="imgbasg">
-                <img src="https://cdn.pixabay.com/photo/2021/12/31/11/51/penguin-6905568_1280.jpg" alt="pingouin" class="imgbasd">
-            </div>
-            <div class="Mentions">
-                <a href="mentions.html">Mentions légales</a>
-                <a href="rgpd.html">Politique de données personnelles</a>
-            </div>
-        </footer>
+    <footer>
+        <div id="imgfooter">
+            <img src="https://cdn.pixabay.com/photo/2018/11/11/16/51/bird-3809147_1280.jpg" alt="oiseau" class="imgbasg">
+            <img src="https://cdn.pixabay.com/photo/2021/12/31/11/51/penguin-6905568_1280.jpg" alt="pingouin" class="imgbasd">
+        </div>
+        <div class="Mentions">
+            <a href="mentions.html">Mentions légales</a>
+            <a href="rgpd.html">Politique de données personnelles</a>
+        </div>
+    </footer>
 </body>
 
 </html>

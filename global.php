@@ -7,7 +7,7 @@ require_once('libs/sql.php');
 
 function checkAccess() {
     if (!isset($_SESSION['user_id'])) {
-        header('Location: /connexion.html');
+        header('Location: /connexions.php');
         die();
     }
 }

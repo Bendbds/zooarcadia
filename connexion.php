@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once('libs/global.php');
 
 // Créer une connexion
@@ -11,8 +15,8 @@ if ($conn->connect_error) {
 }
 
 // Récupérer les informations du formulaire
-$identifiant = $_POST['identifiant'];
-$motdepasse = $_POST['motdepasse'];
+$identifiant = trim($_POST['identifiant']);
+$motdepasse = trim($_POST['motdepasse']);
 
 // Préparer et exécuter la requête SQL
 $sql = "SELECT user_id, password, role FROM users WHERE username = ?";
@@ -23,32 +27,34 @@ $result = $stmt->get_result();
 
 if ($result->num_rows < 1) {
     $_SESSION['error'] = 'Identifiant ou mot de passe incorrect';
-    header('Location: /zooarcadia/connexion.html');
+    header('Location: /connexions.php');
+    exit(); // Ajout de exit() pour stopper l'exécution
 }
 
 $user = $result->fetch_assoc();
-// Fermer la connexion
+$stmt->close();
 $conn->close();
 
 // Vérifier le mot de passe
 if (!password_verify($motdepasse, $user['password'])) {
     $_SESSION['error'] = 'Identifiant ou mot de passe incorrect';
-    header('Location: /connexion.html');
+    header('Location: /connexions.php');
+    exit(); // Ajout de exit() pour stopper l'exécution
 }
 
 // Authentification réussie
-// $_SESSION['loggedin'] = true;
+session_regenerate_id(true); // Sécuriser la session
 $_SESSION['user_id'] = $user['user_id'];
 $_SESSION['role'] = $user['role'];
 
 // Redirection basée sur le rôle
 if ($user['role'] === 'veterinaire') {
-    header('Location: /zooarcadia/connectveto.php');
+    header('Location: /connectveto.php');
 } elseif ($user['role'] === 'admin') {
-    header('Location: /zooarcadia/admin.php');
+    header('Location: /admin.php');
 } elseif ($user['role'] === 'employe') {
-    header('Location: /zooarcadia/employe.php');
+    header('Location: /employe.php');
 } else {
-    header('Location: /zooarcadia/connexion.php');
+    header('Location: /connexions.php');
 }
-exit();
+exit(); // Ajout de exit() pour stopper l'exécution
