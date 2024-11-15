@@ -2,7 +2,6 @@
 require_once('libs/global.php');
 
 checkAccess();
-$success = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn = initConnexion();
@@ -20,8 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!$stmt->execute()) {
         die("Execute failed: " . $stmt->error);
     }
-
-    $success = true;
 
     $stmt->close();
     $conn->close();
