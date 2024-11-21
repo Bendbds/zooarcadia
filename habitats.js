@@ -22,11 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
           method: form.method,
           body: formData,
         })
-          .then((response) => response.text())
-          .then((data) => {
-            // Vous pouvez ajouter ici du code pour manipuler le DOM ou afficher un message de succès
-            console.log("Formulaire soumis avec succès");
-          })
           .catch((error) => {
             console.error("Erreur:", error);
           });
