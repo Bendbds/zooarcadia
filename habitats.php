@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $habitat = isset($_POST['habitat']) ? $conn->real_escape_string($_POST['habitat']) : '';
 
     if (empty($habitat)) {
-        die("Invalid habitat name");
+        die("Nom d'habitat non valide");
     }
 
     // Préparer la requête de mise à jour pour incrémenter le nombre de clics
@@ -161,19 +161,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <nav>
             <form method="POST" action="habitats.php">
                 <input type="hidden" name="habitat" value="Le continent Antarctique">
-                <button type="submit" class="antarctique">Le continent Antartique</button>
+                <button type="submit" class="antarctique">Le continent Antarctique</button>
 
                 <span class="liste-cachee-quatre">
-                    <p>La forêt tropicale, habitat de notre tigre:</p>
+                    <p>Le continent Antarctique, habitat de notre manchot:</p>
                     <br>
-                    <p>Nom: Tigrou</p>
-                    <p>Espèce: Tigre du Bengale</p>
-                    <p>Age: 5 ans</p>
-                    <p>Poids: 110kg</p>
-                    <p>Taille: 2,56 mètres</p>
-                    <p>Avis du vétérinaire: Tigrou est en pleine forme et se rationne bien.</p>
+                    <p>Nom: Alphonse</p>
+                    <p>Espèce: Manchot empereur</p>
+                    <p>Age: 8 ans</p>
+                    <p>Poids: 27kg</p>
+                    <p>Taille: 0.98 mètres</p>
+                    <p>Avis du vétérinaire: Alphonse se sent bien et se nourrit avec envie.</p>
                     <br>
-                    <img class="tigrou" alt="Tigre du Bengale" src="https://cdn.pixabay.com/photo/2023/05/29/15/25/tiger-8026345_1280.jpg">
+                    <img class="manchot" alt="Manchot empereur" src="https://cdn.pixabay.com/photo/2023/05/29/15/25/tiger-8026345_1280.jpg">
                     <br>
                 </span>
             </form>
